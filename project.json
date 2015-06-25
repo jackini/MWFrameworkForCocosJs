@@ -11,6 +11,7 @@
     "modules" : ["cocos2d"],
 
     "jsList" : [
+        "src/framework/jsclass.js",
         "src/resource.js",
         "src/app.js"
     ]

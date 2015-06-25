@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A67682A180E9C060076BC67 /* libcocos2dx Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2dx Mac.a */; };
-		1A676839180E9C1E0076BC67 /* libcocos2dx iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2dx iOS.a */; };
+		1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */; };
+		1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */; };
 		1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A82F5FA169AC92500C4B13A /* libsqlite3.dylib */; };
 		1AC22EDE18CA0E11007112B9 /* project.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A081B18C9DF05005C6854 /* project.json */; };
 		1AD7E0A818C9DB93004817A6 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A6BF21418C9DB5900FB0E1C /* main.js */; };
@@ -70,6 +70,72 @@
 		D454520C156E22BD00887EB5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D454520B156E22BD00887EB5 /* libz.dylib */; };
 		D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D4545215156E28EF00887EB5 /* AppDelegate.cpp */; };
 		D6B061241803AB9F0077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B061231803AB9F0077942B /* CoreMotion.framework */; };
+		F512A19D1B3C86260002531C /* FrameworkErrors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5129FFD1B3C86260002531C /* FrameworkErrors.cpp */; };
+		F512A19E1B3C86260002531C /* MWArrayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0041B3C86260002531C /* MWArrayList.cpp */; };
+		F512A19F1B3C86260002531C /* MWBinaryData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0071B3C86260002531C /* MWBinaryData.cpp */; };
+		F512A1A01B3C86260002531C /* MWDictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0091B3C86260002531C /* MWDictionary.cpp */; };
+		F512A1A11B3C86260002531C /* MWException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A00B1B3C86260002531C /* MWException.cpp */; };
+		F512A1A21B3C86260002531C /* MWObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A00D1B3C86260002531C /* MWObject.cpp */; };
+		F512A1A31B3C86260002531C /* MWQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A00F1B3C86260002531C /* MWQueue.cpp */; };
+		F512A1A41B3C86260002531C /* MWStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0111B3C86260002531C /* MWStack.cpp */; };
+		F512A1A51B3C86260002531C /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A0161B3C86260002531C /* ioapi.c */; };
+		F512A1A61B3C86260002531C /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A0181B3C86260002531C /* mztools.c */; };
+		F512A1A71B3C86260002531C /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A01A1B3C86260002531C /* unzip.c */; };
+		F512A1A81B3C86260002531C /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A01C1B3C86260002531C /* zip.c */; };
+		F512A1A91B3C86260002531C /* MWZipData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A01E1B3C86260002531C /* MWZipData.cpp */; };
+		F512A1AA1B3C86260002531C /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A0241B3C86260002531C /* sqlite3.c */; };
+		F512A1AB1B3C86260002531C /* MWSqliteDb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0271B3C86260002531C /* MWSqliteDb.cpp */; };
+		F512A1AC1B3C86260002531C /* js_mwframework_auto_api.js in Resources */ = {isa = PBXBuildFile; fileRef = F512A02C1B3C86260002531C /* js_mwframework_auto_api.js */; };
+		F512A1AD1B3C86260002531C /* js_mwframework_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A02D1B3C86260002531C /* js_mwframework_auto.cpp */; };
+		F512A1AE1B3C86260002531C /* internalJSONNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0391B3C86260002531C /* internalJSONNode.cpp */; };
+		F512A1AF1B3C86260002531C /* JSONAllocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A03C1B3C86260002531C /* JSONAllocator.cpp */; };
+		F512A1B01B3C86260002531C /* JSONChildren.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A03E1B3C86260002531C /* JSONChildren.cpp */; };
+		F512A1B11B3C86260002531C /* JSONDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0401B3C86260002531C /* JSONDebug.cpp */; };
+		F512A1B21B3C86260002531C /* JSONIterators.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0491B3C86260002531C /* JSONIterators.cpp */; };
+		F512A1B31B3C86260002531C /* JSONMemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A04A1B3C86260002531C /* JSONMemory.cpp */; };
+		F512A1B41B3C86260002531C /* JSONNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A04D1B3C86260002531C /* JSONNode.cpp */; };
+		F512A1B51B3C86260002531C /* JSONNode_Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A04F1B3C86260002531C /* JSONNode_Mutex.cpp */; };
+		F512A1B61B3C86260002531C /* JSONPreparse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0501B3C86260002531C /* JSONPreparse.cpp */; };
+		F512A1B71B3C86260002531C /* JSONStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0551B3C86260002531C /* JSONStream.cpp */; };
+		F512A1B81B3C86260002531C /* JSONValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0571B3C86260002531C /* JSONValidator.cpp */; };
+		F512A1B91B3C86260002531C /* JSONWorker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0591B3C86260002531C /* JSONWorker.cpp */; };
+		F512A1BA1B3C86260002531C /* JSONWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A05B1B3C86260002531C /* JSONWriter.cpp */; };
+		F512A1BB1B3C86260002531C /* libjson.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A05C1B3C86260002531C /* libjson.cpp */; };
+		F512A1BC1B3C86260002531C /* MWJsonElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A05E1B3C86260002531C /* MWJsonElement.cpp */; };
+		F512A1BD1B3C86260002531C /* MWJsonFormatter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0601B3C86260002531C /* MWJsonFormatter.cpp */; };
+		F512A1BE1B3C86260002531C /* MWJsonParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0621B3C86260002531C /* MWJsonParser.cpp */; };
+		F512A1BF1B3C86260002531C /* MWJsonStructure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A0641B3C86260002531C /* MWJsonStructure.cpp */; };
+		F512A2101B3C86270002531C /* MWNetCenter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A11A1B3C86260002531C /* MWNetCenter.cpp */; };
+		F512A2111B3C86270002531C /* MWNetFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A11C1B3C86260002531C /* MWNetFilter.cpp */; };
+		F512A2121B3C86270002531C /* MWNetHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A11E1B3C86260002531C /* MWNetHandler.cpp */; };
+		F512A2131B3C86270002531C /* MWNetProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A1201B3C86260002531C /* MWNetProtocol.cpp */; };
+		F512A2141B3C86270002531C /* MWNetRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A1221B3C86260002531C /* MWNetRequest.cpp */; };
+		F512A2151B3C86270002531C /* MWNetResponse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A1241B3C86260002531C /* MWNetResponse.cpp */; };
+		F512A2161B3C86270002531C /* MWIOUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A1281B3C86260002531C /* MWIOUtils.cpp */; };
+		F512A2181B3C86270002531C /* MWIOUtilsStrategyIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F512A12D1B3C86260002531C /* MWIOUtilsStrategyIOS.mm */; };
+		F512A2191B3C86270002531C /* MWSystemHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A12E1B3C86260002531C /* MWSystemHelper.cpp */; };
+		F512A21A1B3C86270002531C /* MWSystemHelperStrategyIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F512A1321B3C86260002531C /* MWSystemHelperStrategyIOS.mm */; };
+		F512A21E1B3C86270002531C /* MWGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A1791B3C86260002531C /* MWGameScene.cpp */; };
+		F512A21F1B3C86270002531C /* MWGameView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A17B1B3C86260002531C /* MWGameView.cpp */; };
+		F512A2201B3C86270002531C /* MWViewController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A17D1B3C86260002531C /* MWViewController.cpp */; };
+		F512A2211B3C86270002531C /* MWViewSegue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A17F1B3C86260002531C /* MWViewSegue.cpp */; };
+		F512A2221B3C86270002531C /* dgif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A1841B3C86260002531C /* dgif_lib.c */; };
+		F512A2231B3C86270002531C /* egif_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A1851B3C86260002531C /* egif_lib.c */; };
+		F512A2241B3C86270002531C /* gif_err.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A1861B3C86260002531C /* gif_err.c */; };
+		F512A2251B3C86270002531C /* gif_font.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A1871B3C86260002531C /* gif_font.c */; };
+		F512A2261B3C86270002531C /* gif_hash.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A1881B3C86260002531C /* gif_hash.c */; };
+		F512A2271B3C86270002531C /* gifalloc.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A18C1B3C86260002531C /* gifalloc.c */; };
+		F512A2281B3C86270002531C /* quantize.c in Sources */ = {isa = PBXBuildFile; fileRef = F512A18D1B3C86260002531C /* quantize.c */; };
+		F512A2291B3C86270002531C /* MWGifFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A18E1B3C86260002531C /* MWGifFrame.cpp */; };
+		F512A22A1B3C86270002531C /* MWGifFramesCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A1901B3C86260002531C /* MWGifFramesCache.cpp */; };
+		F512A22B1B3C86270002531C /* MWGifSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A1921B3C86260002531C /* MWGifSprite.cpp */; };
+		F512A22C1B3C86270002531C /* MWSvgSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A1951B3C86260002531C /* MWSvgSprite.cpp */; };
+		F512A22D1B3C86270002531C /* MWUUIDGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A19B1B3C86260002531C /* MWUUIDGenerator.cpp */; };
+		F512A2381B3C87380002531C /* MWHttpDownloader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A22F1B3C87380002531C /* MWHttpDownloader.cpp */; };
+		F512A2391B3C87380002531C /* MWHttpForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A2311B3C87380002531C /* MWHttpForm.cpp */; };
+		F512A23A1B3C87380002531C /* MWHttpGetService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A2331B3C87380002531C /* MWHttpGetService.cpp */; };
+		F512A23B1B3C87380002531C /* MWHttpPostService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A2351B3C87380002531C /* MWHttpPostService.cpp */; };
+		F512A2EC1B3C87AD0002531C /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F512A2EB1B3C87AD0002531C /* libcurl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,54 +146,12 @@
 			remoteGlobalIDString = 1551A33E158F2AB200E66CFE;
 			remoteInfo = "cocos2dx Mac";
 		};
-		1A676821180E9BF70076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A03F2FC117814595006731B9;
-			remoteInfo = "cocos2dx-extensions Mac";
-		};
-		1A676823180E9BF70076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A03F2B781780BD04006731B9;
-			remoteInfo = "chipmunk Mac";
-		};
-		1A676825180E9BF70076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A03F2E9817814268006731B9;
-			remoteInfo = "CocosDenshion Mac";
-		};
 		1A67682E180E9C110076BC67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = A07A4C241783777C0073F6A7;
 			remoteInfo = "cocos2dx iOS";
-		};
-		1A676830180E9C110076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A07A4E111783867C0073F6A7;
-			remoteInfo = "cocos2dx-extensions iOS";
-		};
-		1A676832180E9C110076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A07A4EFD178387670073F6A7;
-			remoteInfo = "chipmunk iOS";
-		};
-		1A676834180E9C110076BC67 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A07A4F9F178387730073F6A7;
-			remoteInfo = "CocosDenshion iOS";
 		};
 		1AC6FB47180E9ACB004C840B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -136,68 +160,12 @@
 			remoteGlobalIDString = 1551A33F158F2AB200E66CFE;
 			remoteInfo = "cocos2dx Mac";
 		};
-		1AC6FB49180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03F2FD617814595006731B9;
-			remoteInfo = "cocos2dx-extensions Mac";
-		};
-		1AC6FB4B180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03F2CB81780BD04006731B9;
-			remoteInfo = "chipmunk Mac";
-		};
-		1AC6FB4D180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03F2D9B1780BDF7006731B9;
-			remoteInfo = "box2d Mac";
-		};
-		1AC6FB4F180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03F2ED617814268006731B9;
-			remoteInfo = "CocosDenshion Mac";
-		};
 		1AC6FB55180E9ACB004C840B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A07A4D641783777C0073F6A7;
 			remoteInfo = "cocos2dx iOS";
-		};
-		1AC6FB57180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A07A4EFC1783867C0073F6A7;
-			remoteInfo = "cocos2dx-extensions iOS";
-		};
-		1AC6FB59180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A07A4F3B178387670073F6A7;
-			remoteInfo = "chipmunk iOS";
-		};
-		1AC6FB5B180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A07A4F9E1783876B0073F6A7;
-			remoteInfo = "box2d iOS";
-		};
-		1AC6FB5D180E9ACB004C840B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A07A4FB4178387730073F6A7;
-			remoteInfo = "CocosDenshion iOS";
 		};
 		C037820618BF76AF00FE4F13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -288,6 +256,169 @@
 		D4545215156E28EF00887EB5 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		D4545216156E28EF00887EB5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6B061231803AB9F0077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		F5129FFD1B3C86260002531C /* FrameworkErrors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameworkErrors.cpp; sourceTree = "<group>"; };
+		F5129FFE1B3C86260002531C /* FrameworkErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkErrors.h; sourceTree = "<group>"; };
+		F5129FFF1B3C86260002531C /* FrameworkMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkMacros.h; sourceTree = "<group>"; };
+		F512A0001B3C86260002531C /* ICloneable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICloneable.h; sourceTree = "<group>"; };
+		F512A0011B3C86260002531C /* ISerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISerializable.h; sourceTree = "<group>"; };
+		F512A0021B3C86260002531C /* IUncopyable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUncopyable.h; sourceTree = "<group>"; };
+		F512A0031B3C86260002531C /* IUninheritable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUninheritable.h; sourceTree = "<group>"; };
+		F512A0041B3C86260002531C /* MWArrayList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWArrayList.cpp; sourceTree = "<group>"; };
+		F512A0051B3C86260002531C /* MWArrayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWArrayList.h; sourceTree = "<group>"; };
+		F512A0061B3C86260002531C /* mwbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mwbase.h; sourceTree = "<group>"; };
+		F512A0071B3C86260002531C /* MWBinaryData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWBinaryData.cpp; sourceTree = "<group>"; };
+		F512A0081B3C86260002531C /* MWBinaryData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWBinaryData.h; sourceTree = "<group>"; };
+		F512A0091B3C86260002531C /* MWDictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWDictionary.cpp; sourceTree = "<group>"; };
+		F512A00A1B3C86260002531C /* MWDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWDictionary.h; sourceTree = "<group>"; };
+		F512A00B1B3C86260002531C /* MWException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWException.cpp; sourceTree = "<group>"; };
+		F512A00C1B3C86260002531C /* MWException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWException.h; sourceTree = "<group>"; };
+		F512A00D1B3C86260002531C /* MWObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWObject.cpp; sourceTree = "<group>"; };
+		F512A00E1B3C86260002531C /* MWObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWObject.h; sourceTree = "<group>"; };
+		F512A00F1B3C86260002531C /* MWQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWQueue.cpp; sourceTree = "<group>"; };
+		F512A0101B3C86260002531C /* MWQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWQueue.h; sourceTree = "<group>"; };
+		F512A0111B3C86260002531C /* MWStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWStack.cpp; sourceTree = "<group>"; };
+		F512A0121B3C86260002531C /* MWStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWStack.h; sourceTree = "<group>"; };
+		F512A0151B3C86260002531C /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		F512A0161B3C86260002531C /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		F512A0171B3C86260002531C /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		F512A0181B3C86260002531C /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		F512A0191B3C86260002531C /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		F512A01A1B3C86260002531C /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		F512A01B1B3C86260002531C /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		F512A01C1B3C86260002531C /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		F512A01D1B3C86260002531C /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		F512A01E1B3C86260002531C /* MWZipData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWZipData.cpp; sourceTree = "<group>"; };
+		F512A01F1B3C86260002531C /* MWZipData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWZipData.h; sourceTree = "<group>"; };
+		F512A0211B3C86260002531C /* IDbBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDbBase.h; sourceTree = "<group>"; };
+		F512A0241B3C86260002531C /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		F512A0251B3C86260002531C /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		F512A0261B3C86260002531C /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		F512A0271B3C86260002531C /* MWSqliteDb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWSqliteDb.cpp; sourceTree = "<group>"; };
+		F512A0281B3C86260002531C /* MWSqliteDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSqliteDb.h; sourceTree = "<group>"; };
+		F512A02C1B3C86260002531C /* js_mwframework_auto_api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = js_mwframework_auto_api.js; sourceTree = "<group>"; };
+		F512A02D1B3C86260002531C /* js_mwframework_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = js_mwframework_auto.cpp; sourceTree = "<group>"; };
+		F512A02E1B3C86260002531C /* js_mwframework_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = js_mwframework_auto.hpp; sourceTree = "<group>"; };
+		F512A0331B3C86260002531C /* libbase64++.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libbase64++.h"; sourceTree = "<group>"; };
+		F512A0351B3C86260002531C /* mempool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mempool.h; sourceTree = "<group>"; };
+		F512A0361B3C86260002531C /* JSONOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONOptions.h; sourceTree = "<group>"; };
+		F512A0371B3C86260002531C /* libjson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libjson.h; sourceTree = "<group>"; };
+		F512A0391B3C86260002531C /* internalJSONNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = internalJSONNode.cpp; sourceTree = "<group>"; };
+		F512A03A1B3C86260002531C /* internalJSONNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internalJSONNode.h; sourceTree = "<group>"; };
+		F512A03B1B3C86260002531C /* JSON_Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON_Base64.h; sourceTree = "<group>"; };
+		F512A03C1B3C86260002531C /* JSONAllocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONAllocator.cpp; sourceTree = "<group>"; };
+		F512A03D1B3C86260002531C /* JSONAllocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAllocator.h; sourceTree = "<group>"; };
+		F512A03E1B3C86260002531C /* JSONChildren.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONChildren.cpp; sourceTree = "<group>"; };
+		F512A03F1B3C86260002531C /* JSONChildren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONChildren.h; sourceTree = "<group>"; };
+		F512A0401B3C86260002531C /* JSONDebug.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONDebug.cpp; sourceTree = "<group>"; };
+		F512A0411B3C86260002531C /* JSONDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONDebug.h; sourceTree = "<group>"; };
+		F512A0431B3C86260002531C /* GNU_C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNU_C.h; sourceTree = "<group>"; };
+		F512A0441B3C86260002531C /* Strings_Defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strings_Defs.h; sourceTree = "<group>"; };
+		F512A0451B3C86260002531C /* Unknown_C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unknown_C.h; sourceTree = "<group>"; };
+		F512A0461B3C86260002531C /* Visual_C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visual_C.h; sourceTree = "<group>"; };
+		F512A0471B3C86260002531C /* JSONDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONDefs.h; sourceTree = "<group>"; };
+		F512A0481B3C86260002531C /* JSONGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONGlobals.h; sourceTree = "<group>"; };
+		F512A0491B3C86260002531C /* JSONIterators.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONIterators.cpp; sourceTree = "<group>"; };
+		F512A04A1B3C86260002531C /* JSONMemory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONMemory.cpp; sourceTree = "<group>"; };
+		F512A04B1B3C86260002531C /* JSONMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONMemory.h; sourceTree = "<group>"; };
+		F512A04C1B3C86260002531C /* JSONMemoryPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONMemoryPool.h; sourceTree = "<group>"; };
+		F512A04D1B3C86260002531C /* JSONNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONNode.cpp; sourceTree = "<group>"; };
+		F512A04E1B3C86260002531C /* JSONNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONNode.h; sourceTree = "<group>"; };
+		F512A04F1B3C86260002531C /* JSONNode_Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONNode_Mutex.cpp; sourceTree = "<group>"; };
+		F512A0501B3C86260002531C /* JSONPreparse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONPreparse.cpp; sourceTree = "<group>"; };
+		F512A0511B3C86260002531C /* JSONPreparse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONPreparse.h; sourceTree = "<group>"; };
+		F512A0521B3C86260002531C /* JSONSharedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSharedString.h; sourceTree = "<group>"; };
+		F512A0531B3C86260002531C /* JSONSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSingleton.h; sourceTree = "<group>"; };
+		F512A0541B3C86260002531C /* JSONStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONStats.h; sourceTree = "<group>"; };
+		F512A0551B3C86260002531C /* JSONStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONStream.cpp; sourceTree = "<group>"; };
+		F512A0561B3C86260002531C /* JSONStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONStream.h; sourceTree = "<group>"; };
+		F512A0571B3C86260002531C /* JSONValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONValidator.cpp; sourceTree = "<group>"; };
+		F512A0581B3C86260002531C /* JSONValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValidator.h; sourceTree = "<group>"; };
+		F512A0591B3C86260002531C /* JSONWorker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONWorker.cpp; sourceTree = "<group>"; };
+		F512A05A1B3C86260002531C /* JSONWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONWorker.h; sourceTree = "<group>"; };
+		F512A05B1B3C86260002531C /* JSONWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JSONWriter.cpp; sourceTree = "<group>"; };
+		F512A05C1B3C86260002531C /* libjson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libjson.cpp; sourceTree = "<group>"; };
+		F512A05D1B3C86260002531C /* NumberToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberToString.h; sourceTree = "<group>"; };
+		F512A05E1B3C86260002531C /* MWJsonElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWJsonElement.cpp; sourceTree = "<group>"; };
+		F512A05F1B3C86260002531C /* MWJsonElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWJsonElement.h; sourceTree = "<group>"; };
+		F512A0601B3C86260002531C /* MWJsonFormatter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWJsonFormatter.cpp; sourceTree = "<group>"; };
+		F512A0611B3C86260002531C /* MWJsonFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWJsonFormatter.h; sourceTree = "<group>"; };
+		F512A0621B3C86260002531C /* MWJsonParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWJsonParser.cpp; sourceTree = "<group>"; };
+		F512A0631B3C86260002531C /* MWJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWJsonParser.h; sourceTree = "<group>"; };
+		F512A0641B3C86260002531C /* MWJsonStructure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWJsonStructure.cpp; sourceTree = "<group>"; };
+		F512A0651B3C86260002531C /* MWJsonStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWJsonStructure.h; sourceTree = "<group>"; };
+		F512A08C1B3C86260002531C /* mwframework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mwframework.h; sourceTree = "<group>"; };
+		F512A11A1B3C86260002531C /* MWNetCenter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWNetCenter.cpp; sourceTree = "<group>"; };
+		F512A11B1B3C86260002531C /* MWNetCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNetCenter.h; sourceTree = "<group>"; };
+		F512A11C1B3C86260002531C /* MWNetFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWNetFilter.cpp; sourceTree = "<group>"; };
+		F512A11D1B3C86260002531C /* MWNetFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNetFilter.h; sourceTree = "<group>"; };
+		F512A11E1B3C86260002531C /* MWNetHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWNetHandler.cpp; sourceTree = "<group>"; };
+		F512A11F1B3C86260002531C /* MWNetHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNetHandler.h; sourceTree = "<group>"; };
+		F512A1201B3C86260002531C /* MWNetProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWNetProtocol.cpp; sourceTree = "<group>"; };
+		F512A1211B3C86260002531C /* MWNetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNetProtocol.h; sourceTree = "<group>"; };
+		F512A1221B3C86260002531C /* MWNetRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWNetRequest.cpp; sourceTree = "<group>"; };
+		F512A1231B3C86260002531C /* MWNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNetRequest.h; sourceTree = "<group>"; };
+		F512A1241B3C86260002531C /* MWNetResponse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWNetResponse.cpp; sourceTree = "<group>"; };
+		F512A1251B3C86260002531C /* MWNetResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNetResponse.h; sourceTree = "<group>"; };
+		F512A1261B3C86260002531C /* MWNetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWNetService.h; sourceTree = "<group>"; };
+		F512A1281B3C86260002531C /* MWIOUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWIOUtils.cpp; sourceTree = "<group>"; };
+		F512A1291B3C86260002531C /* MWIOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWIOUtils.h; sourceTree = "<group>"; };
+		F512A12B1B3C86260002531C /* MWIOUtilsStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWIOUtilsStrategy.h; sourceTree = "<group>"; };
+		F512A12C1B3C86260002531C /* MWIOUtilsStrategyIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWIOUtilsStrategyIOS.h; sourceTree = "<group>"; };
+		F512A12D1B3C86260002531C /* MWIOUtilsStrategyIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MWIOUtilsStrategyIOS.mm; sourceTree = "<group>"; };
+		F512A12E1B3C86260002531C /* MWSystemHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWSystemHelper.cpp; sourceTree = "<group>"; };
+		F512A12F1B3C86260002531C /* MWSystemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSystemHelper.h; sourceTree = "<group>"; };
+		F512A1301B3C86260002531C /* MWSystemHelperStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSystemHelperStrategy.h; sourceTree = "<group>"; };
+		F512A1311B3C86260002531C /* MWSystemHelperStrategyIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSystemHelperStrategyIOS.h; sourceTree = "<group>"; };
+		F512A1321B3C86260002531C /* MWSystemHelperStrategyIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MWSystemHelperStrategyIOS.mm; sourceTree = "<group>"; };
+		F512A1791B3C86260002531C /* MWGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWGameScene.cpp; sourceTree = "<group>"; };
+		F512A17A1B3C86260002531C /* MWGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGameScene.h; sourceTree = "<group>"; };
+		F512A17B1B3C86260002531C /* MWGameView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWGameView.cpp; sourceTree = "<group>"; };
+		F512A17C1B3C86260002531C /* MWGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGameView.h; sourceTree = "<group>"; };
+		F512A17D1B3C86260002531C /* MWViewController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWViewController.cpp; sourceTree = "<group>"; };
+		F512A17E1B3C86260002531C /* MWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWViewController.h; sourceTree = "<group>"; };
+		F512A17F1B3C86260002531C /* MWViewSegue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWViewSegue.cpp; sourceTree = "<group>"; };
+		F512A1801B3C86260002531C /* MWViewSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWViewSegue.h; sourceTree = "<group>"; };
+		F512A1841B3C86260002531C /* dgif_lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dgif_lib.c; sourceTree = "<group>"; };
+		F512A1851B3C86260002531C /* egif_lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = egif_lib.c; sourceTree = "<group>"; };
+		F512A1861B3C86260002531C /* gif_err.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gif_err.c; sourceTree = "<group>"; };
+		F512A1871B3C86260002531C /* gif_font.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gif_font.c; sourceTree = "<group>"; };
+		F512A1881B3C86260002531C /* gif_hash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gif_hash.c; sourceTree = "<group>"; };
+		F512A1891B3C86260002531C /* gif_hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gif_hash.h; sourceTree = "<group>"; };
+		F512A18A1B3C86260002531C /* gif_lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gif_lib.h; sourceTree = "<group>"; };
+		F512A18B1B3C86260002531C /* gif_lib_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gif_lib_private.h; sourceTree = "<group>"; };
+		F512A18C1B3C86260002531C /* gifalloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gifalloc.c; sourceTree = "<group>"; };
+		F512A18D1B3C86260002531C /* quantize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = quantize.c; sourceTree = "<group>"; };
+		F512A18E1B3C86260002531C /* MWGifFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWGifFrame.cpp; sourceTree = "<group>"; };
+		F512A18F1B3C86260002531C /* MWGifFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGifFrame.h; sourceTree = "<group>"; };
+		F512A1901B3C86260002531C /* MWGifFramesCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWGifFramesCache.cpp; sourceTree = "<group>"; };
+		F512A1911B3C86260002531C /* MWGifFramesCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGifFramesCache.h; sourceTree = "<group>"; };
+		F512A1921B3C86260002531C /* MWGifSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWGifSprite.cpp; sourceTree = "<group>"; };
+		F512A1931B3C86260002531C /* MWGifSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGifSprite.h; sourceTree = "<group>"; };
+		F512A1951B3C86260002531C /* MWSvgSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWSvgSprite.cpp; sourceTree = "<group>"; };
+		F512A1961B3C86260002531C /* MWSvgSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSvgSprite.h; sourceTree = "<group>"; };
+		F512A1981B3C86260002531C /* nanosvg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanosvg.h; sourceTree = "<group>"; };
+		F512A1991B3C86260002531C /* nanosvgrast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanosvgrast.h; sourceTree = "<group>"; };
+		F512A19B1B3C86260002531C /* MWUUIDGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWUUIDGenerator.cpp; sourceTree = "<group>"; };
+		F512A19C1B3C86260002531C /* MWUUIDGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWUUIDGenerator.h; sourceTree = "<group>"; };
+		F512A22F1B3C87380002531C /* MWHttpDownloader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWHttpDownloader.cpp; sourceTree = "<group>"; };
+		F512A2301B3C87380002531C /* MWHttpDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHttpDownloader.h; sourceTree = "<group>"; };
+		F512A2311B3C87380002531C /* MWHttpForm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWHttpForm.cpp; sourceTree = "<group>"; };
+		F512A2321B3C87380002531C /* MWHttpForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHttpForm.h; sourceTree = "<group>"; };
+		F512A2331B3C87380002531C /* MWHttpGetService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWHttpGetService.cpp; sourceTree = "<group>"; };
+		F512A2341B3C87380002531C /* MWHttpGetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHttpGetService.h; sourceTree = "<group>"; };
+		F512A2351B3C87380002531C /* MWHttpPostService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWHttpPostService.cpp; sourceTree = "<group>"; };
+		F512A2361B3C87380002531C /* MWHttpPostService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHttpPostService.h; sourceTree = "<group>"; };
+		F512A2371B3C87380002531C /* MWHttpTransferStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHttpTransferStrategy.h; sourceTree = "<group>"; };
+		F512A24C1B3C877C0002531C /* curl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curl.h; sourceTree = "<group>"; };
+		F512A24D1B3C877C0002531C /* curlbuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curlbuild.h; sourceTree = "<group>"; };
+		F512A24E1B3C877C0002531C /* curlrules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curlrules.h; sourceTree = "<group>"; };
+		F512A24F1B3C877C0002531C /* curlver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curlver.h; sourceTree = "<group>"; };
+		F512A2501B3C877C0002531C /* easy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easy.h; sourceTree = "<group>"; };
+		F512A2511B3C877C0002531C /* mprintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mprintf.h; sourceTree = "<group>"; };
+		F512A2521B3C877C0002531C /* multi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multi.h; sourceTree = "<group>"; };
+		F512A2531B3C877C0002531C /* stdcheaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdcheaders.h; sourceTree = "<group>"; };
+		F512A2541B3C877C0002531C /* typecheck-gcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "typecheck-gcc.h"; sourceTree = "<group>"; };
+		F512A2EB1B3C87AD0002531C /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../Framework/net/http/curl/prebuilt/ios/libcurl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,7 +428,7 @@
 			files = (
 				BAEE4D841AC40C11003BEB0F /* Security.framework in Frameworks */,
 				C037820F18BF77DE00FE4F13 /* libjsbindings Mac.a in Frameworks */,
-				1A67682A180E9C060076BC67 /* libcocos2dx Mac.a in Frameworks */,
+				1A67682A180E9C060076BC67 /* libcocos2d Mac.a in Frameworks */,
 				502380DC17EBB88200990C9B /* libcurl.dylib in Frameworks */,
 				509D4A8817EBB24E00697056 /* libsqlite3.dylib in Frameworks */,
 				509D4A8917EBB24E00697056 /* libz.dylib in Frameworks */,
@@ -317,10 +448,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F512A2EC1B3C87AD0002531C /* libcurl.a in Frameworks */,
 				BA3A85EC1A724AE900924D24 /* Security.framework in Frameworks */,
 				BA4E718119EB6E3F00932425 /* MediaPlayer.framework in Frameworks */,
 				C037820C18BF77C500FE4F13 /* libjsbindings iOS.a in Frameworks */,
-				1A676839180E9C1E0076BC67 /* libcocos2dx iOS.a in Frameworks */,
+				1A676839180E9C1E0076BC67 /* libcocos2d iOS.a in Frameworks */,
 				D6B061241803AB9F0077942B /* CoreMotion.framework in Frameworks */,
 				1A82F5FB169AC92500C4B13A /* libsqlite3.dylib in Frameworks */,
 				D454520C156E22BD00887EB5 /* libz.dylib in Frameworks */,
@@ -352,16 +484,8 @@
 		1AC6FB35180E9ACB004C840B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1AC6FB48180E9ACB004C840B /* libcocos2dx Mac.a */,
-				1AC6FB4A180E9ACB004C840B /* libcocos2dx-extensions Mac.a */,
-				1AC6FB4C180E9ACB004C840B /* libchipmunk Mac.a */,
-				1AC6FB4E180E9ACB004C840B /* libbox2d Mac.a */,
-				1AC6FB50180E9ACB004C840B /* libCocosDenshion Mac.a */,
-				1AC6FB56180E9ACB004C840B /* libcocos2dx iOS.a */,
-				1AC6FB58180E9ACB004C840B /* libcocos2dx-extensions iOS.a */,
-				1AC6FB5A180E9ACB004C840B /* libchipmunk iOS.a */,
-				1AC6FB5C180E9ACB004C840B /* libbox2d iOS.a */,
-				1AC6FB5E180E9ACB004C840B /* libCocosDenshion iOS.a */,
+				1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */,
+				1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,6 +528,7 @@
 				1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */,
 				BAF426FA19484B3E002B22EF /* script */,
 				D4545214156E28EF00887EB5 /* Classes */,
+				F5129FFB1B3C86260002531C /* Framework */,
 				A92275401517C094001B78AA /* Frameworks */,
 				D45446CC156DE73F00887EB5 /* ios */,
 				509D4ACA17EBB2BE00697056 /* mac */,
@@ -424,6 +549,7 @@
 		A92275401517C094001B78AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F512A2EB1B3C87AD0002531C /* libcurl.a */,
 				BAEE4D831AC40C11003BEB0F /* Security.framework */,
 				BA3A85EB1A724AE900924D24 /* Security.framework */,
 				BA4E718219EB6E4600932425 /* GameController.framework */,
@@ -485,6 +611,416 @@
 			path = ../Classes;
 			sourceTree = "<group>";
 		};
+		F5129FFB1B3C86260002531C /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				F5129FFC1B3C86260002531C /* base */,
+				F512A0131B3C86260002531C /* compression */,
+				F512A0201B3C86260002531C /* db */,
+				F512A0291B3C86260002531C /* js */,
+				F512A02F1B3C86260002531C /* json */,
+				F512A08C1B3C86260002531C /* mwframework.h */,
+				F512A08D1B3C86260002531C /* net */,
+				F512A1271B3C86260002531C /* platform */,
+				F512A1781B3C86260002531C /* scheme */,
+				F512A1811B3C86260002531C /* texture */,
+				F512A19A1B3C86260002531C /* utils */,
+			);
+			name = Framework;
+			path = ../Framework;
+			sourceTree = "<group>";
+		};
+		F5129FFC1B3C86260002531C /* base */ = {
+			isa = PBXGroup;
+			children = (
+				F5129FFD1B3C86260002531C /* FrameworkErrors.cpp */,
+				F5129FFE1B3C86260002531C /* FrameworkErrors.h */,
+				F5129FFF1B3C86260002531C /* FrameworkMacros.h */,
+				F512A0001B3C86260002531C /* ICloneable.h */,
+				F512A0011B3C86260002531C /* ISerializable.h */,
+				F512A0021B3C86260002531C /* IUncopyable.h */,
+				F512A0031B3C86260002531C /* IUninheritable.h */,
+				F512A0041B3C86260002531C /* MWArrayList.cpp */,
+				F512A0051B3C86260002531C /* MWArrayList.h */,
+				F512A0061B3C86260002531C /* mwbase.h */,
+				F512A0071B3C86260002531C /* MWBinaryData.cpp */,
+				F512A0081B3C86260002531C /* MWBinaryData.h */,
+				F512A0091B3C86260002531C /* MWDictionary.cpp */,
+				F512A00A1B3C86260002531C /* MWDictionary.h */,
+				F512A00B1B3C86260002531C /* MWException.cpp */,
+				F512A00C1B3C86260002531C /* MWException.h */,
+				F512A00D1B3C86260002531C /* MWObject.cpp */,
+				F512A00E1B3C86260002531C /* MWObject.h */,
+				F512A00F1B3C86260002531C /* MWQueue.cpp */,
+				F512A0101B3C86260002531C /* MWQueue.h */,
+				F512A0111B3C86260002531C /* MWStack.cpp */,
+				F512A0121B3C86260002531C /* MWStack.h */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		F512A0131B3C86260002531C /* compression */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0141B3C86260002531C /* minizip */,
+				F512A01E1B3C86260002531C /* MWZipData.cpp */,
+				F512A01F1B3C86260002531C /* MWZipData.h */,
+			);
+			path = compression;
+			sourceTree = "<group>";
+		};
+		F512A0141B3C86260002531C /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0151B3C86260002531C /* crypt.h */,
+				F512A0161B3C86260002531C /* ioapi.c */,
+				F512A0171B3C86260002531C /* ioapi.h */,
+				F512A0181B3C86260002531C /* mztools.c */,
+				F512A0191B3C86260002531C /* mztools.h */,
+				F512A01A1B3C86260002531C /* unzip.c */,
+				F512A01B1B3C86260002531C /* unzip.h */,
+				F512A01C1B3C86260002531C /* zip.c */,
+				F512A01D1B3C86260002531C /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		F512A0201B3C86260002531C /* db */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0211B3C86260002531C /* IDbBase.h */,
+				F512A0221B3C86260002531C /* sqlite */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		F512A0221B3C86260002531C /* sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0231B3C86260002531C /* libsqlite */,
+				F512A0271B3C86260002531C /* MWSqliteDb.cpp */,
+				F512A0281B3C86260002531C /* MWSqliteDb.h */,
+			);
+			path = sqlite;
+			sourceTree = "<group>";
+		};
+		F512A0231B3C86260002531C /* libsqlite */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0241B3C86260002531C /* sqlite3.c */,
+				F512A0251B3C86260002531C /* sqlite3.h */,
+				F512A0261B3C86260002531C /* sqlite3ext.h */,
+			);
+			path = libsqlite;
+			sourceTree = "<group>";
+		};
+		F512A0291B3C86260002531C /* js */ = {
+			isa = PBXGroup;
+			children = (
+				F512A02A1B3C86260002531C /* auto */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
+		F512A02A1B3C86260002531C /* auto */ = {
+			isa = PBXGroup;
+			children = (
+				F512A02B1B3C86260002531C /* api */,
+				F512A02D1B3C86260002531C /* js_mwframework_auto.cpp */,
+				F512A02E1B3C86260002531C /* js_mwframework_auto.hpp */,
+			);
+			path = auto;
+			sourceTree = "<group>";
+		};
+		F512A02B1B3C86260002531C /* api */ = {
+			isa = PBXGroup;
+			children = (
+				F512A02C1B3C86260002531C /* js_mwframework_auto_api.js */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		F512A02F1B3C86260002531C /* json */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0301B3C86260002531C /* libjson */,
+				F512A05E1B3C86260002531C /* MWJsonElement.cpp */,
+				F512A05F1B3C86260002531C /* MWJsonElement.h */,
+				F512A0601B3C86260002531C /* MWJsonFormatter.cpp */,
+				F512A0611B3C86260002531C /* MWJsonFormatter.h */,
+				F512A0621B3C86260002531C /* MWJsonParser.cpp */,
+				F512A0631B3C86260002531C /* MWJsonParser.h */,
+				F512A0641B3C86260002531C /* MWJsonStructure.cpp */,
+				F512A0651B3C86260002531C /* MWJsonStructure.h */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		F512A0301B3C86260002531C /* libjson */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0311B3C86260002531C /* Dependencies */,
+				F512A0361B3C86260002531C /* JSONOptions.h */,
+				F512A0371B3C86260002531C /* libjson.h */,
+				F512A0381B3C86260002531C /* Source */,
+			);
+			path = libjson;
+			sourceTree = "<group>";
+		};
+		F512A0311B3C86260002531C /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0321B3C86260002531C /* libbase64++ */,
+				F512A0341B3C86260002531C /* mempool++ */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		F512A0321B3C86260002531C /* libbase64++ */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0331B3C86260002531C /* libbase64++.h */,
+			);
+			path = "libbase64++";
+			sourceTree = "<group>";
+		};
+		F512A0341B3C86260002531C /* mempool++ */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0351B3C86260002531C /* mempool.h */,
+			);
+			path = "mempool++";
+			sourceTree = "<group>";
+		};
+		F512A0381B3C86260002531C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0391B3C86260002531C /* internalJSONNode.cpp */,
+				F512A03A1B3C86260002531C /* internalJSONNode.h */,
+				F512A03B1B3C86260002531C /* JSON_Base64.h */,
+				F512A03C1B3C86260002531C /* JSONAllocator.cpp */,
+				F512A03D1B3C86260002531C /* JSONAllocator.h */,
+				F512A03E1B3C86260002531C /* JSONChildren.cpp */,
+				F512A03F1B3C86260002531C /* JSONChildren.h */,
+				F512A0401B3C86260002531C /* JSONDebug.cpp */,
+				F512A0411B3C86260002531C /* JSONDebug.h */,
+				F512A0421B3C86260002531C /* JSONDefs */,
+				F512A0471B3C86260002531C /* JSONDefs.h */,
+				F512A0481B3C86260002531C /* JSONGlobals.h */,
+				F512A0491B3C86260002531C /* JSONIterators.cpp */,
+				F512A04A1B3C86260002531C /* JSONMemory.cpp */,
+				F512A04B1B3C86260002531C /* JSONMemory.h */,
+				F512A04C1B3C86260002531C /* JSONMemoryPool.h */,
+				F512A04D1B3C86260002531C /* JSONNode.cpp */,
+				F512A04E1B3C86260002531C /* JSONNode.h */,
+				F512A04F1B3C86260002531C /* JSONNode_Mutex.cpp */,
+				F512A0501B3C86260002531C /* JSONPreparse.cpp */,
+				F512A0511B3C86260002531C /* JSONPreparse.h */,
+				F512A0521B3C86260002531C /* JSONSharedString.h */,
+				F512A0531B3C86260002531C /* JSONSingleton.h */,
+				F512A0541B3C86260002531C /* JSONStats.h */,
+				F512A0551B3C86260002531C /* JSONStream.cpp */,
+				F512A0561B3C86260002531C /* JSONStream.h */,
+				F512A0571B3C86260002531C /* JSONValidator.cpp */,
+				F512A0581B3C86260002531C /* JSONValidator.h */,
+				F512A0591B3C86260002531C /* JSONWorker.cpp */,
+				F512A05A1B3C86260002531C /* JSONWorker.h */,
+				F512A05B1B3C86260002531C /* JSONWriter.cpp */,
+				F512A05C1B3C86260002531C /* libjson.cpp */,
+				F512A05D1B3C86260002531C /* NumberToString.h */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F512A0421B3C86260002531C /* JSONDefs */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0431B3C86260002531C /* GNU_C.h */,
+				F512A0441B3C86260002531C /* Strings_Defs.h */,
+				F512A0451B3C86260002531C /* Unknown_C.h */,
+				F512A0461B3C86260002531C /* Visual_C.h */,
+			);
+			path = JSONDefs;
+			sourceTree = "<group>";
+		};
+		F512A08D1B3C86260002531C /* net */ = {
+			isa = PBXGroup;
+			children = (
+				F512A22E1B3C87380002531C /* http */,
+				F512A11A1B3C86260002531C /* MWNetCenter.cpp */,
+				F512A11B1B3C86260002531C /* MWNetCenter.h */,
+				F512A11C1B3C86260002531C /* MWNetFilter.cpp */,
+				F512A11D1B3C86260002531C /* MWNetFilter.h */,
+				F512A11E1B3C86260002531C /* MWNetHandler.cpp */,
+				F512A11F1B3C86260002531C /* MWNetHandler.h */,
+				F512A1201B3C86260002531C /* MWNetProtocol.cpp */,
+				F512A1211B3C86260002531C /* MWNetProtocol.h */,
+				F512A1221B3C86260002531C /* MWNetRequest.cpp */,
+				F512A1231B3C86260002531C /* MWNetRequest.h */,
+				F512A1241B3C86260002531C /* MWNetResponse.cpp */,
+				F512A1251B3C86260002531C /* MWNetResponse.h */,
+				F512A1261B3C86260002531C /* MWNetService.h */,
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
+		F512A1271B3C86260002531C /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				F512A1281B3C86260002531C /* MWIOUtils.cpp */,
+				F512A1291B3C86260002531C /* MWIOUtils.h */,
+				F512A12B1B3C86260002531C /* MWIOUtilsStrategy.h */,
+				F512A12C1B3C86260002531C /* MWIOUtilsStrategyIOS.h */,
+				F512A12D1B3C86260002531C /* MWIOUtilsStrategyIOS.mm */,
+				F512A12E1B3C86260002531C /* MWSystemHelper.cpp */,
+				F512A12F1B3C86260002531C /* MWSystemHelper.h */,
+				F512A1301B3C86260002531C /* MWSystemHelperStrategy.h */,
+				F512A1311B3C86260002531C /* MWSystemHelperStrategyIOS.h */,
+				F512A1321B3C86260002531C /* MWSystemHelperStrategyIOS.mm */,
+			);
+			path = platform;
+			sourceTree = "<group>";
+		};
+		F512A1781B3C86260002531C /* scheme */ = {
+			isa = PBXGroup;
+			children = (
+				F512A1791B3C86260002531C /* MWGameScene.cpp */,
+				F512A17A1B3C86260002531C /* MWGameScene.h */,
+				F512A17B1B3C86260002531C /* MWGameView.cpp */,
+				F512A17C1B3C86260002531C /* MWGameView.h */,
+				F512A17D1B3C86260002531C /* MWViewController.cpp */,
+				F512A17E1B3C86260002531C /* MWViewController.h */,
+				F512A17F1B3C86260002531C /* MWViewSegue.cpp */,
+				F512A1801B3C86260002531C /* MWViewSegue.h */,
+			);
+			path = scheme;
+			sourceTree = "<group>";
+		};
+		F512A1811B3C86260002531C /* texture */ = {
+			isa = PBXGroup;
+			children = (
+				F512A1821B3C86260002531C /* gif */,
+				F512A1941B3C86260002531C /* svg */,
+			);
+			path = texture;
+			sourceTree = "<group>";
+		};
+		F512A1821B3C86260002531C /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				F512A1831B3C86260002531C /* gif_lib */,
+				F512A18E1B3C86260002531C /* MWGifFrame.cpp */,
+				F512A18F1B3C86260002531C /* MWGifFrame.h */,
+				F512A1901B3C86260002531C /* MWGifFramesCache.cpp */,
+				F512A1911B3C86260002531C /* MWGifFramesCache.h */,
+				F512A1921B3C86260002531C /* MWGifSprite.cpp */,
+				F512A1931B3C86260002531C /* MWGifSprite.h */,
+			);
+			path = gif;
+			sourceTree = "<group>";
+		};
+		F512A1831B3C86260002531C /* gif_lib */ = {
+			isa = PBXGroup;
+			children = (
+				F512A1841B3C86260002531C /* dgif_lib.c */,
+				F512A1851B3C86260002531C /* egif_lib.c */,
+				F512A1861B3C86260002531C /* gif_err.c */,
+				F512A1871B3C86260002531C /* gif_font.c */,
+				F512A1881B3C86260002531C /* gif_hash.c */,
+				F512A1891B3C86260002531C /* gif_hash.h */,
+				F512A18A1B3C86260002531C /* gif_lib.h */,
+				F512A18B1B3C86260002531C /* gif_lib_private.h */,
+				F512A18C1B3C86260002531C /* gifalloc.c */,
+				F512A18D1B3C86260002531C /* quantize.c */,
+			);
+			path = gif_lib;
+			sourceTree = "<group>";
+		};
+		F512A1941B3C86260002531C /* svg */ = {
+			isa = PBXGroup;
+			children = (
+				F512A1951B3C86260002531C /* MWSvgSprite.cpp */,
+				F512A1961B3C86260002531C /* MWSvgSprite.h */,
+				F512A1971B3C86260002531C /* nanosvg */,
+			);
+			path = svg;
+			sourceTree = "<group>";
+		};
+		F512A1971B3C86260002531C /* nanosvg */ = {
+			isa = PBXGroup;
+			children = (
+				F512A1981B3C86260002531C /* nanosvg.h */,
+				F512A1991B3C86260002531C /* nanosvgrast.h */,
+			);
+			path = nanosvg;
+			sourceTree = "<group>";
+		};
+		F512A19A1B3C86260002531C /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				F512A19B1B3C86260002531C /* MWUUIDGenerator.cpp */,
+				F512A19C1B3C86260002531C /* MWUUIDGenerator.h */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		F512A22E1B3C87380002531C /* http */ = {
+			isa = PBXGroup;
+			children = (
+				F512A23C1B3C877C0002531C /* curl */,
+				F512A22F1B3C87380002531C /* MWHttpDownloader.cpp */,
+				F512A2301B3C87380002531C /* MWHttpDownloader.h */,
+				F512A2311B3C87380002531C /* MWHttpForm.cpp */,
+				F512A2321B3C87380002531C /* MWHttpForm.h */,
+				F512A2331B3C87380002531C /* MWHttpGetService.cpp */,
+				F512A2341B3C87380002531C /* MWHttpGetService.h */,
+				F512A2351B3C87380002531C /* MWHttpPostService.cpp */,
+				F512A2361B3C87380002531C /* MWHttpPostService.h */,
+				F512A2371B3C87380002531C /* MWHttpTransferStrategy.h */,
+			);
+			path = http;
+			sourceTree = "<group>";
+		};
+		F512A23C1B3C877C0002531C /* curl */ = {
+			isa = PBXGroup;
+			children = (
+				F512A23D1B3C877C0002531C /* include */,
+			);
+			path = curl;
+			sourceTree = "<group>";
+		};
+		F512A23D1B3C877C0002531C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F512A24A1B3C877C0002531C /* ios */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		F512A24A1B3C877C0002531C /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				F512A24B1B3C877C0002531C /* curl */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		F512A24B1B3C877C0002531C /* curl */ = {
+			isa = PBXGroup;
+			children = (
+				F512A24C1B3C877C0002531C /* curl.h */,
+				F512A24D1B3C877C0002531C /* curlbuild.h */,
+				F512A24E1B3C877C0002531C /* curlrules.h */,
+				F512A24F1B3C877C0002531C /* curlver.h */,
+				F512A2501B3C877C0002531C /* easy.h */,
+				F512A2511B3C877C0002531C /* mprintf.h */,
+				F512A2521B3C877C0002531C /* multi.h */,
+				F512A2531B3C877C0002531C /* stdcheaders.h */,
+				F512A2541B3C877C0002531C /* typecheck-gcc.h */,
+			);
+			path = curl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -501,9 +1037,6 @@
 			dependencies = (
 				C037820E18BF77D100FE4F13 /* PBXTargetDependency */,
 				1A676820180E9BF70076BC67 /* PBXTargetDependency */,
-				1A676822180E9BF70076BC67 /* PBXTargetDependency */,
-				1A676824180E9BF70076BC67 /* PBXTargetDependency */,
-				1A676826180E9BF70076BC67 /* PBXTargetDependency */,
 			);
 			name = "GameFramework Mac";
 			productName = GameFramework;
@@ -523,9 +1056,6 @@
 			dependencies = (
 				C037820B18BF77BC00FE4F13 /* PBXTargetDependency */,
 				1A67682F180E9C110076BC67 /* PBXTargetDependency */,
-				1A676831180E9C110076BC67 /* PBXTargetDependency */,
-				1A676833180E9C110076BC67 /* PBXTargetDependency */,
-				1A676835180E9C110076BC67 /* PBXTargetDependency */,
 			);
 			name = "GameFramework iOS";
 			productName = GameFramework;
@@ -541,7 +1071,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					A922753C1517C094001B78AA = {
-						DevelopmentTeam = MDDB52YB8L;
+						DevelopmentTeam = Q989R2SM23;
 					};
 				};
 			};
@@ -574,74 +1104,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1AC6FB48180E9ACB004C840B /* libcocos2dx Mac.a */ = {
+		1AC6FB48180E9ACB004C840B /* libcocos2d Mac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libcocos2dx Mac.a";
+			path = "libcocos2d Mac.a";
 			remoteRef = 1AC6FB47180E9ACB004C840B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1AC6FB4A180E9ACB004C840B /* libcocos2dx-extensions Mac.a */ = {
+		1AC6FB56180E9ACB004C840B /* libcocos2d iOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libcocos2dx-extensions Mac.a";
-			remoteRef = 1AC6FB49180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB4C180E9ACB004C840B /* libchipmunk Mac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libchipmunk Mac.a";
-			remoteRef = 1AC6FB4B180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB4E180E9ACB004C840B /* libbox2d Mac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libbox2d Mac.a";
-			remoteRef = 1AC6FB4D180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB50180E9ACB004C840B /* libCocosDenshion Mac.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libCocosDenshion Mac.a";
-			remoteRef = 1AC6FB4F180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB56180E9ACB004C840B /* libcocos2dx iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libcocos2dx iOS.a";
+			path = "libcocos2d iOS.a";
 			remoteRef = 1AC6FB55180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB58180E9ACB004C840B /* libcocos2dx-extensions iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libcocos2dx-extensions iOS.a";
-			remoteRef = 1AC6FB57180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB5A180E9ACB004C840B /* libchipmunk iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libchipmunk iOS.a";
-			remoteRef = 1AC6FB59180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB5C180E9ACB004C840B /* libbox2d iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libbox2d iOS.a";
-			remoteRef = 1AC6FB5B180E9ACB004C840B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1AC6FB5E180E9ACB004C840B /* libCocosDenshion iOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libCocosDenshion iOS.a";
-			remoteRef = 1AC6FB5D180E9ACB004C840B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C037820718BF76AF00FE4F13 /* libjsbindings Mac.a */ = {
@@ -680,6 +1154,7 @@
 			files = (
 				BAF426FB19484B3E002B22EF /* script in Resources */,
 				1AE159EC18C9DF3600FCA372 /* project.json in Resources */,
+				F512A1AC1B3C86260002531C /* js_mwframework_auto_api.js in Resources */,
 				1AD7E0A818C9DB93004817A6 /* main.js in Resources */,
 				509D4ABE17EBB2AB00697056 /* Default.png in Resources */,
 				5091731E17ECDF7A00D62437 /* Icon-80.png in Resources */,
@@ -718,10 +1193,74 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F512A19D1B3C86260002531C /* FrameworkErrors.cpp in Sources */,
+				F512A2241B3C86270002531C /* gif_err.c in Sources */,
+				F512A1B21B3C86260002531C /* JSONIterators.cpp in Sources */,
+				F512A2101B3C86270002531C /* MWNetCenter.cpp in Sources */,
+				F512A1B41B3C86260002531C /* JSONNode.cpp in Sources */,
+				F512A2131B3C86270002531C /* MWNetProtocol.cpp in Sources */,
+				F512A1B01B3C86260002531C /* JSONChildren.cpp in Sources */,
+				F512A1AB1B3C86260002531C /* MWSqliteDb.cpp in Sources */,
+				F512A1AA1B3C86260002531C /* sqlite3.c in Sources */,
+				F512A1A51B3C86260002531C /* ioapi.c in Sources */,
+				F512A1BF1B3C86260002531C /* MWJsonStructure.cpp in Sources */,
+				F512A2261B3C86270002531C /* gif_hash.c in Sources */,
 				509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */,
+				F512A2181B3C86270002531C /* MWIOUtilsStrategyIOS.mm in Sources */,
+				F512A1AF1B3C86260002531C /* JSONAllocator.cpp in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
+				F512A1BA1B3C86260002531C /* JSONWriter.cpp in Sources */,
+				F512A2141B3C86270002531C /* MWNetRequest.cpp in Sources */,
+				F512A23A1B3C87380002531C /* MWHttpGetService.cpp in Sources */,
+				F512A22B1B3C86270002531C /* MWGifSprite.cpp in Sources */,
+				F512A1AD1B3C86260002531C /* js_mwframework_auto.cpp in Sources */,
+				F512A1BE1B3C86260002531C /* MWJsonParser.cpp in Sources */,
+				F512A2391B3C87380002531C /* MWHttpForm.cpp in Sources */,
+				F512A22C1B3C86270002531C /* MWSvgSprite.cpp in Sources */,
+				F512A1A61B3C86260002531C /* mztools.c in Sources */,
+				F512A1A01B3C86260002531C /* MWDictionary.cpp in Sources */,
+				F512A1A71B3C86260002531C /* unzip.c in Sources */,
+				F512A1A11B3C86260002531C /* MWException.cpp in Sources */,
+				F512A2381B3C87380002531C /* MWHttpDownloader.cpp in Sources */,
+				F512A1B31B3C86260002531C /* JSONMemory.cpp in Sources */,
+				F512A1B81B3C86260002531C /* JSONValidator.cpp in Sources */,
+				F512A1BD1B3C86260002531C /* MWJsonFormatter.cpp in Sources */,
+				F512A21A1B3C86270002531C /* MWSystemHelperStrategyIOS.mm in Sources */,
+				F512A2271B3C86270002531C /* gifalloc.c in Sources */,
+				F512A1A31B3C86260002531C /* MWQueue.cpp in Sources */,
+				F512A1A81B3C86260002531C /* zip.c in Sources */,
+				F512A1B91B3C86260002531C /* JSONWorker.cpp in Sources */,
+				F512A19E1B3C86260002531C /* MWArrayList.cpp in Sources */,
+				F512A2211B3C86270002531C /* MWViewSegue.cpp in Sources */,
+				F512A22D1B3C86270002531C /* MWUUIDGenerator.cpp in Sources */,
+				F512A2221B3C86270002531C /* dgif_lib.c in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
+				F512A1BB1B3C86260002531C /* libjson.cpp in Sources */,
+				F512A2251B3C86270002531C /* gif_font.c in Sources */,
+				F512A21E1B3C86270002531C /* MWGameScene.cpp in Sources */,
+				F512A2291B3C86270002531C /* MWGifFrame.cpp in Sources */,
+				F512A2231B3C86270002531C /* egif_lib.c in Sources */,
+				F512A21F1B3C86270002531C /* MWGameView.cpp in Sources */,
+				F512A2201B3C86270002531C /* MWViewController.cpp in Sources */,
+				F512A1A91B3C86260002531C /* MWZipData.cpp in Sources */,
+				F512A2191B3C86270002531C /* MWSystemHelper.cpp in Sources */,
+				F512A22A1B3C86270002531C /* MWGifFramesCache.cpp in Sources */,
+				F512A1BC1B3C86260002531C /* MWJsonElement.cpp in Sources */,
+				F512A23B1B3C87380002531C /* MWHttpPostService.cpp in Sources */,
+				F512A1B51B3C86260002531C /* JSONNode_Mutex.cpp in Sources */,
+				F512A19F1B3C86260002531C /* MWBinaryData.cpp in Sources */,
+				F512A1A21B3C86260002531C /* MWObject.cpp in Sources */,
+				F512A1A41B3C86260002531C /* MWStack.cpp in Sources */,
+				F512A1AE1B3C86260002531C /* internalJSONNode.cpp in Sources */,
+				F512A2281B3C86270002531C /* quantize.c in Sources */,
+				F512A2161B3C86270002531C /* MWIOUtils.cpp in Sources */,
+				F512A2111B3C86270002531C /* MWNetFilter.cpp in Sources */,
+				F512A2121B3C86270002531C /* MWNetHandler.cpp in Sources */,
 				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,
+				F512A1B61B3C86260002531C /* JSONPreparse.cpp in Sources */,
+				F512A1B11B3C86260002531C /* JSONDebug.cpp in Sources */,
+				F512A2151B3C86270002531C /* MWNetResponse.cpp in Sources */,
+				F512A1B71B3C86260002531C /* JSONStream.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,40 +1272,10 @@
 			name = "cocos2dx Mac";
 			targetProxy = 1A67681F180E9BF70076BC67 /* PBXContainerItemProxy */;
 		};
-		1A676822180E9BF70076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "cocos2dx-extensions Mac";
-			targetProxy = 1A676821180E9BF70076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676824180E9BF70076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "chipmunk Mac";
-			targetProxy = 1A676823180E9BF70076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676826180E9BF70076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "CocosDenshion Mac";
-			targetProxy = 1A676825180E9BF70076BC67 /* PBXContainerItemProxy */;
-		};
 		1A67682F180E9C110076BC67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "cocos2dx iOS";
 			targetProxy = 1A67682E180E9C110076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676831180E9C110076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "cocos2dx-extensions iOS";
-			targetProxy = 1A676830180E9C110076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676833180E9C110076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "chipmunk iOS";
-			targetProxy = 1A676832180E9C110076BC67 /* PBXContainerItemProxy */;
-		};
-		1A676835180E9C110076BC67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "CocosDenshion iOS";
-			targetProxy = 1A676834180E9C110076BC67 /* PBXContainerItemProxy */;
 		};
 		C037820B18BF77BC00FE4F13 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -890,12 +1399,26 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
+					MW_ENABLE_SCRIPT_BINDING,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/armeabi",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/armeabi-v7a",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/x86",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/ios",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/win32",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/winrt_8.1/arm",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/winrt_8.1/win32",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp8/arm",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp8/win32",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp_8.1/arm",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp_8.1/win32",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/protobuf/protobuf_lib/lib",
+				);
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -916,12 +1439,26 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					CC_TARGET_OS_IPHONE,
 					"$(inherited)",
+					MW_ENABLE_SCRIPT_BINDING,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/armeabi",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/armeabi-v7a",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/x86",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/ios",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/win32",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/winrt_8.1/arm",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/winrt_8.1/win32",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp8/arm",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp8/win32",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp_8.1/arm",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp_8.1/win32",
+					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/protobuf/protobuf_lib/lib",
+				);
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

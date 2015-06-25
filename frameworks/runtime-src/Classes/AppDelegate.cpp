@@ -28,8 +28,11 @@
 #include "platform/ios/JavaScriptObjCBridge.h"
 #endif
 
+#include "mwframework.h"
+
 USING_NS_CC;
 using namespace CocosDenshion;
+using namespace mwframework;
 
 AppDelegate::AppDelegate()
 {
@@ -108,11 +111,16 @@ bool AppDelegate::applicationDidFinishLaunching()
     // 3d extension can be commented out to reduce the package
     sc->addRegisterCallback(register_all_cocos2dx_3d_extension);
     
+#if MW_ENABLE_SCRIPT_BINDING
+    sc->addRegisterCallback(register_all_mwframework);
+#endif
+    
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     sc->addRegisterCallback(JavascriptJavaBridge::_js_register);
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
     sc->addRegisterCallback(JavaScriptObjCBridge::_js_register);
 #endif
+    
     sc->start();    
     sc->runScript("script/jsb_boot.js");
 #if defined(COCOS2D_DEBUG) && (COCOS2D_DEBUG > 0)

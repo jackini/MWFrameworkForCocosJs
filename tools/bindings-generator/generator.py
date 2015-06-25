@@ -1101,6 +1101,14 @@ class Generator(object):
         self.head_file.close()
         self.doc_file.close()
 
+        # add by wx
+        tmp = open(implfilepath)
+        alltext = tmp.read().replace('mw.MW', 'mw.').replace('"MW', '"')
+        tmp.close()
+        tmp = open(implfilepath, "w")
+        tmp.write(alltext)
+        tmp.close()
+
     def _pretty_print(self, diagnostics):
         print("====\nErrors in parsing headers:")
         severities=['Ignored', 'Note', 'Warning', 'Error', 'Fatal']
