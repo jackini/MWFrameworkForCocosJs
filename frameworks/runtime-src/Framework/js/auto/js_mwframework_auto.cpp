@@ -2559,6 +2559,35 @@ void js_register_mwframework_MWGameScene(JSContext *cx, JS::HandleObject global)
 JSClass  *jsb_mwframework_MWViewController_class;
 JSObject *jsb_mwframework_MWViewController_prototype;
 
+bool js_mwframework_MWViewController_init(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    mwframework::MWViewController* cobj = (mwframework::MWViewController *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWViewController_init : Invalid Native Object");
+    if (argc == 1) {
+        mwframework::MWViewSegue* arg0;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (mwframework::MWViewSegue*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_mwframework_MWViewController_init : Error processing arguments");
+        bool ret = cobj->init(arg0);
+        jsval jsret = JSVAL_NULL;
+        jsret = BOOLEAN_TO_JSVAL(ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_mwframework_MWViewController_init : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
 bool js_mwframework_MWViewController_segue(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -2746,6 +2775,35 @@ bool js_mwframework_MWViewController_create(JSContext *cx, uint32_t argc, jsval 
     return false;
 }
 
+bool js_mwframework_MWViewController_constructor(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    mwframework::MWViewController* cobj = new (std::nothrow) mwframework::MWViewController();
+    cocos2d::Ref *_ccobj = dynamic_cast<cocos2d::Ref *>(cobj);
+    if (_ccobj) {
+        _ccobj->autorelease();
+    }
+    TypeTest<mwframework::MWViewController> t;
+    js_type_class_t *typeClass = nullptr;
+    std::string typeName = t.s_name();
+    auto typeMapIter = _js_global_type_map.find(typeName);
+    CCASSERT(typeMapIter != _js_global_type_map.end(), "Can't find the class type!");
+    typeClass = typeMapIter->second;
+    CCASSERT(typeClass, "The value is null.");
+    // JSObject *obj = JS_NewObject(cx, typeClass->jsclass, typeClass->proto, typeClass->parentProto);
+    JS::RootedObject proto(cx, typeClass->proto.get());
+    JS::RootedObject parent(cx, typeClass->parentProto.get());
+    JS::RootedObject obj(cx, JS_NewObject(cx, typeClass->jsclass, proto, parent));
+    args.rval().set(OBJECT_TO_JSVAL(obj));
+    // link the native object with the javascript object
+    js_proxy_t* p = jsb_new_proxy(cobj, obj);
+    AddNamedObjectRoot(cx, &p->obj, "mwframework::MWViewController");
+    if (JS_HasProperty(cx, obj, "_ctor", &ok) && ok)
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", args);
+    return true;
+}
+
 
 extern JSObject *jsb_mwframework_MWObject_prototype;
 
@@ -2772,6 +2830,7 @@ void js_register_mwframework_MWViewController(JSContext *cx, JS::HandleObject gl
     };
 
     static JSFunctionSpec funcs[] = {
+        JS_FN("init", js_mwframework_MWViewController_init, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("segue", js_mwframework_MWViewController_segue, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("scene", js_mwframework_MWViewController_scene, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("viewDidUnload", js_mwframework_MWViewController_viewDidUnload, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
@@ -2791,7 +2850,7 @@ void js_register_mwframework_MWViewController(JSContext *cx, JS::HandleObject gl
         cx, global,
         JS::RootedObject(cx, jsb_mwframework_MWObject_prototype),
         jsb_mwframework_MWViewController_class,
-        dummy_constructor<mwframework::MWViewController>, 0, // no constructor
+        js_mwframework_MWViewController_constructor, 0, // constructor
         properties,
         funcs,
         NULL, // no static properties

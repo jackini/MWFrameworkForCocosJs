@@ -12,6 +12,7 @@
 
     "jsList" : [
         "src/framework/jsclass.js",
+        "src/framework/baseclasses.js",
         "src/resource.js",
         "src/app.js"
     ]

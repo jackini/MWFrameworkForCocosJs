@@ -49,7 +49,7 @@ public:
     virtual void viewDidSegue(MWViewController *controller) override;
     virtual void viewDidSegueBack(MWViewController *controller) override;
     
-protected:
+CC_CONSTRUCTOR_ACCESS:
     bool init();
 };
 

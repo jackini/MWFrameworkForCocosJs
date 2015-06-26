@@ -168,6 +168,7 @@ bool js_mwframework_MWViewController_constructor(JSContext *cx, uint32_t argc, j
 void js_mwframework_MWViewController_finalize(JSContext *cx, JSObject *obj);
 void js_register_mwframework_MWViewController(JSContext *cx, JS::HandleObject global);
 void register_all_mwframework(JSContext* cx, JS::HandleObject obj);
+bool js_mwframework_MWViewController_init(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_segue(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_scene(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_viewDidUnload(JSContext *cx, uint32_t argc, jsval *vp);
@@ -176,6 +177,7 @@ bool js_mwframework_MWViewController_didReceiveMemoryWarning(JSContext *cx, uint
 bool js_mwframework_MWViewController_getIdentifier(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_view(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_create(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_mwframework_MWViewController_MWViewController(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_mwframework_MWGameView_class;
 extern JSObject *jsb_mwframework_MWGameView_prototype;

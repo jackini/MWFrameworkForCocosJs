@@ -93,11 +93,12 @@ public:
     virtual void viewDidUnload() override;
     virtual void didReceiveMemoryWarning() override;
     
-protected:
+CC_CONSTRUCTOR_ACCESS:
     virtual bool init(MWViewSegue *segue);
     
     MWViewController();
     
+protected:
     MWGameScene *_scene;
     MWGameView *_view;
     MWViewSegue *_segue;

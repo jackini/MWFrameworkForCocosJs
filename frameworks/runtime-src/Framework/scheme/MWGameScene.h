@@ -108,11 +108,12 @@ public:
     MW_SYNTHESIZE(double, _memoryWarningLine, MemoryWarningLine);
     MW_SYNTHESIZE_READONLY(MWDictionary *, _viewControllers, ViewControllers);
     
-protected:
+CC_CONSTRUCTOR_ACCESS:
     virtual bool init(MWDictionary *params = nullptr);
     
     MWGameScene();
     
+protected:
     void detectMemory();
     void checkMemory(float dt);
     

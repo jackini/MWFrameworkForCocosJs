@@ -896,6 +896,18 @@ create : function (
 mw.MWViewController = {
 
 /**
+ * @method init
+ * @param {mw.MWViewSegue} arg0
+ * @return {bool}
+ */
+init : function (
+mwviewsegue 
+)
+{
+    return false;
+},
+
+/**
  * @method segue
  * @return {mw.MWViewSegue}
  */
@@ -967,6 +979,15 @@ create : function (
 )
 {
     return mw.MWViewController;
+},
+
+/**
+ * @method MWViewController
+ * @constructor
+ */
+MWViewController : function (
+)
+{
 },
 
 };
