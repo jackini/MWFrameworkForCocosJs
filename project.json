@@ -11,9 +11,10 @@
     "modules" : ["cocos2d"],
 
     "jsList" : [
-        "src/framework/jsclass.js",
-        "src/framework/baseclasses.js",
+        "src/app.js",
         "src/resource.js",
-        "src/app.js"
+        "src/framework/baseclasses.js",
+        "src/test/TestScene.js",
+        "src/test/TestViewController.js"
     ]
 }

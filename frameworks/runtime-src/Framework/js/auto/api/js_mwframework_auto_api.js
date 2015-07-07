@@ -781,6 +781,16 @@ str
 },
 
 /**
+ * @method init
+ * @return {bool}
+ */
+init : function (
+)
+{
+    return false;
+},
+
+/**
  * @method getBooleanParameter
  * @param {String} arg0
  * @return {bool}
@@ -886,6 +896,15 @@ create : function (
 )
 {
     return mw.MWGameScene;
+},
+
+/**
+ * @method MWGameScene
+ * @constructor
+ */
+MWGameScene : function (
+)
+{
 },
 
 };
@@ -1032,6 +1051,16 @@ viewDidSegueBack : function (
 mwviewcontroller 
 )
 {
+},
+
+/**
+ * @method init
+ * @return {bool}
+ */
+init : function (
+)
+{
+    return false;
 },
 
 /**

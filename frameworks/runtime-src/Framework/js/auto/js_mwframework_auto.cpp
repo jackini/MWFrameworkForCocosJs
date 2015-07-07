@@ -2215,6 +2215,42 @@ bool js_mwframework_MWGameScene_getViewControllerByIdentifier(JSContext *cx, uin
     JS_ReportError(cx, "js_mwframework_MWGameScene_getViewControllerByIdentifier : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
 }
+bool js_mwframework_MWGameScene_init(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    mwframework::MWGameScene* cobj = (mwframework::MWGameScene *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWGameScene_init : Invalid Native Object");
+    if (argc == 0) {
+        bool ret = cobj->init();
+        jsval jsret = JSVAL_NULL;
+        jsret = BOOLEAN_TO_JSVAL(ret);
+        args.rval().set(jsret);
+        return true;
+    }
+    if (argc == 1) {
+        mwframework::MWDictionary* arg0;
+        do {
+            if (!args.get(0).isObject()) { ok = false; break; }
+            js_proxy_t *jsProxy;
+            JSObject *tmpObj = args.get(0).toObjectOrNull();
+            jsProxy = jsb_get_js_proxy(tmpObj);
+            arg0 = (mwframework::MWDictionary*)(jsProxy ? jsProxy->ptr : NULL);
+            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
+        } while (0);
+        JSB_PRECONDITION2(ok, cx, false, "js_mwframework_MWGameScene_init : Error processing arguments");
+        bool ret = cobj->init(arg0);
+        jsval jsret = JSVAL_NULL;
+        jsret = BOOLEAN_TO_JSVAL(ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_mwframework_MWGameScene_init : wrong number of arguments: %d, was expecting %d", argc, 0);
+    return false;
+}
 bool js_mwframework_MWGameScene_getBooleanParameter(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -2481,6 +2517,35 @@ bool js_mwframework_MWGameScene_create(JSContext *cx, uint32_t argc, jsval *vp)
     return false;
 }
 
+bool js_mwframework_MWGameScene_constructor(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    mwframework::MWGameScene* cobj = new (std::nothrow) mwframework::MWGameScene();
+    cocos2d::Ref *_ccobj = dynamic_cast<cocos2d::Ref *>(cobj);
+    if (_ccobj) {
+        _ccobj->autorelease();
+    }
+    TypeTest<mwframework::MWGameScene> t;
+    js_type_class_t *typeClass = nullptr;
+    std::string typeName = t.s_name();
+    auto typeMapIter = _js_global_type_map.find(typeName);
+    CCASSERT(typeMapIter != _js_global_type_map.end(), "Can't find the class type!");
+    typeClass = typeMapIter->second;
+    CCASSERT(typeClass, "The value is null.");
+    // JSObject *obj = JS_NewObject(cx, typeClass->jsclass, typeClass->proto, typeClass->parentProto);
+    JS::RootedObject proto(cx, typeClass->proto.get());
+    JS::RootedObject parent(cx, typeClass->parentProto.get());
+    JS::RootedObject obj(cx, JS_NewObject(cx, typeClass->jsclass, proto, parent));
+    args.rval().set(OBJECT_TO_JSVAL(obj));
+    // link the native object with the javascript object
+    js_proxy_t* p = jsb_new_proxy(cobj, obj);
+    AddNamedObjectRoot(cx, &p->obj, "mwframework::MWGameScene");
+    if (JS_HasProperty(cx, obj, "_ctor", &ok) && ok)
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", args);
+    return true;
+}
+
 
 extern JSObject *jsb_cocos2d_Scene_prototype;
 
@@ -2488,6 +2553,22 @@ void js_mwframework_MWGameScene_finalize(JSFreeOp *fop, JSObject *obj) {
     CCLOGINFO("jsbindings: finalizing JS object %p (MWGameScene)", obj);
 }
 
+static bool js_mwframework_MWGameScene_ctor(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    mwframework::MWGameScene *nobj = new (std::nothrow) mwframework::MWGameScene();
+    if (nobj) {
+        nobj->autorelease();
+    }
+    js_proxy_t* p = jsb_new_proxy(nobj, obj);
+    AddNamedObjectRoot(cx, &p->obj, "mwframework::MWGameScene");
+    bool isFound = false;
+    if (JS_HasProperty(cx, obj, "_ctor", &isFound) && isFound)
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", args);
+    args.rval().setUndefined();
+    return true;
+}
 void js_register_mwframework_MWGameScene(JSContext *cx, JS::HandleObject global) {
     jsb_mwframework_MWGameScene_class = (JSClass *)calloc(1, sizeof(JSClass));
     jsb_mwframework_MWGameScene_class->name = "GameScene";
@@ -2511,6 +2592,7 @@ void js_register_mwframework_MWGameScene(JSContext *cx, JS::HandleObject global)
         JS_FN("unloadViewController", js_mwframework_MWGameScene_unloadViewController, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("loadViewController", js_mwframework_MWGameScene_loadViewController, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getViewControllerByIdentifier", js_mwframework_MWGameScene_getViewControllerByIdentifier, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("init", js_mwframework_MWGameScene_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getBooleanParameter", js_mwframework_MWGameScene_getBooleanParameter, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("unloadAllViewControllers", js_mwframework_MWGameScene_unloadAllViewControllers, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("addParameter", js_mwframework_MWGameScene_addParameter, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
@@ -2520,6 +2602,7 @@ void js_register_mwframework_MWGameScene(JSContext *cx, JS::HandleObject global)
         JS_FN("getStringParameter", js_mwframework_MWGameScene_getStringParameter, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("unloadViewControllerByIdentifier", js_mwframework_MWGameScene_unloadViewControllerByIdentifier, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getNumberParameter", js_mwframework_MWGameScene_getNumberParameter, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("ctor", js_mwframework_MWGameScene_ctor, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 
@@ -2532,7 +2615,7 @@ void js_register_mwframework_MWGameScene(JSContext *cx, JS::HandleObject global)
         cx, global,
         JS::RootedObject(cx, jsb_cocos2d_Scene_prototype),
         jsb_mwframework_MWGameScene_class,
-        dummy_constructor<mwframework::MWGameScene>, 0, // no constructor
+        js_mwframework_MWGameScene_constructor, 0, // constructor
         properties,
         funcs,
         NULL, // no static properties
@@ -2811,6 +2894,22 @@ void js_mwframework_MWViewController_finalize(JSFreeOp *fop, JSObject *obj) {
     CCLOGINFO("jsbindings: finalizing JS object %p (MWViewController)", obj);
 }
 
+static bool js_mwframework_MWViewController_ctor(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    mwframework::MWViewController *nobj = new (std::nothrow) mwframework::MWViewController();
+    if (nobj) {
+        nobj->autorelease();
+    }
+    js_proxy_t* p = jsb_new_proxy(nobj, obj);
+    AddNamedObjectRoot(cx, &p->obj, "mwframework::MWViewController");
+    bool isFound = false;
+    if (JS_HasProperty(cx, obj, "_ctor", &isFound) && isFound)
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", args);
+    args.rval().setUndefined();
+    return true;
+}
 void js_register_mwframework_MWViewController(JSContext *cx, JS::HandleObject global) {
     jsb_mwframework_MWViewController_class = (JSClass *)calloc(1, sizeof(JSClass));
     jsb_mwframework_MWViewController_class->name = "ViewController";
@@ -2838,6 +2937,7 @@ void js_register_mwframework_MWViewController(JSContext *cx, JS::HandleObject gl
         JS_FN("didReceiveMemoryWarning", js_mwframework_MWViewController_didReceiveMemoryWarning, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getIdentifier", js_mwframework_MWViewController_getIdentifier, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("view", js_mwframework_MWViewController_view, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("ctor", js_mwframework_MWViewController_ctor, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 
@@ -3017,6 +3117,24 @@ bool js_mwframework_MWViewSegue_viewDidSegueBack(JSContext *cx, uint32_t argc, j
     JS_ReportError(cx, "js_mwframework_MWViewSegue_viewDidSegueBack : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
 }
+bool js_mwframework_MWViewSegue_init(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    mwframework::MWViewSegue* cobj = (mwframework::MWViewSegue *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWViewSegue_init : Invalid Native Object");
+    if (argc == 0) {
+        bool ret = cobj->init();
+        jsval jsret = JSVAL_NULL;
+        jsret = BOOLEAN_TO_JSVAL(ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_mwframework_MWViewSegue_init : wrong number of arguments: %d, was expecting %d", argc, 0);
+    return false;
+}
 bool js_mwframework_MWViewSegue_viewDidSegue(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -3072,6 +3190,22 @@ void js_mwframework_MWViewSegue_finalize(JSFreeOp *fop, JSObject *obj) {
     CCLOGINFO("jsbindings: finalizing JS object %p (MWViewSegue)", obj);
 }
 
+static bool js_mwframework_MWViewSegue_ctor(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    mwframework::MWViewSegue *nobj = new (std::nothrow) mwframework::MWViewSegue();
+    if (nobj) {
+        nobj->autorelease();
+    }
+    js_proxy_t* p = jsb_new_proxy(nobj, obj);
+    AddNamedObjectRoot(cx, &p->obj, "mwframework::MWViewSegue");
+    bool isFound = false;
+    if (JS_HasProperty(cx, obj, "_ctor", &isFound) && isFound)
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", args);
+    args.rval().setUndefined();
+    return true;
+}
 void js_register_mwframework_MWViewSegue(JSContext *cx, JS::HandleObject global) {
     jsb_mwframework_MWViewSegue_class = (JSClass *)calloc(1, sizeof(JSClass));
     jsb_mwframework_MWViewSegue_class->name = "ViewSegue";
@@ -3093,7 +3227,9 @@ void js_register_mwframework_MWViewSegue(JSContext *cx, JS::HandleObject global)
     static JSFunctionSpec funcs[] = {
         JS_FN("viewReadyToSegue", js_mwframework_MWViewSegue_viewReadyToSegue, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("viewDidSegueBack", js_mwframework_MWViewSegue_viewDidSegueBack, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("init", js_mwframework_MWViewSegue_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("viewDidSegue", js_mwframework_MWViewSegue_viewDidSegue, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("ctor", js_mwframework_MWViewSegue_ctor, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 
@@ -5931,6 +6067,22 @@ void js_mwframework_MWNetHandler_finalize(JSFreeOp *fop, JSObject *obj) {
     CCLOGINFO("jsbindings: finalizing JS object %p (MWNetHandler)", obj);
 }
 
+static bool js_mwframework_MWNetHandler_ctor(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    mwframework::MWNetHandler *nobj = new (std::nothrow) mwframework::MWNetHandler();
+    if (nobj) {
+        nobj->autorelease();
+    }
+    js_proxy_t* p = jsb_new_proxy(nobj, obj);
+    AddNamedObjectRoot(cx, &p->obj, "mwframework::MWNetHandler");
+    bool isFound = false;
+    if (JS_HasProperty(cx, obj, "_ctor", &isFound) && isFound)
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", args);
+    args.rval().setUndefined();
+    return true;
+}
 void js_register_mwframework_MWNetHandler(JSContext *cx, JS::HandleObject global) {
     jsb_mwframework_MWNetHandler_class = (JSClass *)calloc(1, sizeof(JSClass));
     jsb_mwframework_MWNetHandler_class->name = "NetHandler";
@@ -5953,6 +6105,7 @@ void js_register_mwframework_MWNetHandler(JSContext *cx, JS::HandleObject global
         JS_FN("handleFailedMessage", js_mwframework_MWNetHandler_handleFailedMessage, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("create", js_mwframework_MWNetHandler_create, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("handleSuccessfulMessage", js_mwframework_MWNetHandler_handleSuccessfulMessage, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("ctor", js_mwframework_MWNetHandler_ctor, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 

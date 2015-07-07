@@ -150,6 +150,7 @@ bool js_mwframework_MWGameScene_getViewControllers(JSContext *cx, uint32_t argc,
 bool js_mwframework_MWGameScene_unloadViewController(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWGameScene_loadViewController(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWGameScene_getViewControllerByIdentifier(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_mwframework_MWGameScene_init(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWGameScene_getBooleanParameter(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWGameScene_unloadAllViewControllers(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWGameScene_addParameter(JSContext *cx, uint32_t argc, jsval *vp);
@@ -160,6 +161,7 @@ bool js_mwframework_MWGameScene_getStringParameter(JSContext *cx, uint32_t argc,
 bool js_mwframework_MWGameScene_unloadViewControllerByIdentifier(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWGameScene_getNumberParameter(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWGameScene_create(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_mwframework_MWGameScene_MWGameScene(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_mwframework_MWViewController_class;
 extern JSObject *jsb_mwframework_MWViewController_prototype;
@@ -197,6 +199,7 @@ void js_register_mwframework_MWViewSegue(JSContext *cx, JS::HandleObject global)
 void register_all_mwframework(JSContext* cx, JS::HandleObject obj);
 bool js_mwframework_MWViewSegue_viewReadyToSegue(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewSegue_viewDidSegueBack(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_mwframework_MWViewSegue_init(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewSegue_viewDidSegue(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewSegue_create(JSContext *cx, uint32_t argc, jsval *vp);
 
