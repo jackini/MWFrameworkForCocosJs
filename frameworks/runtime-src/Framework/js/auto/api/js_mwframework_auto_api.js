@@ -555,6 +555,16 @@ MWStack : function (
 mw.MWSystemHelper = {
 
 /**
+ * @method checkNetStatus
+ * @return {mw.ENetStatus}
+ */
+checkNetStatus : function (
+)
+{
+    return 0;
+},
+
+/**
  * @method getCurrentUsedMemory
  * @return {double}
  */
@@ -655,6 +665,20 @@ str
 )
 {
     return mw.MWBinaryData;
+},
+
+/**
+ * @method splicePath
+ * @param {String} arg0
+ * @param {String} arg1
+ * @return {String}
+ */
+splicePath : function (
+str, 
+str 
+)
+{
+    return ;
 },
 
 /**
@@ -1081,6 +1105,15 @@ create : function (
 )
 {
     return mw.MWViewSegue;
+},
+
+/**
+ * @method MWViewSegue
+ * @constructor
+ */
+MWViewSegue : function (
+)
+{
 },
 
 };

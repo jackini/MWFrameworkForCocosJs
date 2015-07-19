@@ -38,6 +38,21 @@ bool MWIOUtils::fileExists(const std::string &path)
     return exist;
 }
 
+bool MWIOUtils::directoryExists(const std::string &path)
+{
+    string absolutePath = this->resourcePath(path);
+    
+    struct stat info;
+    
+    if (::stat(absolutePath.c_str(), &info) != 0) {
+        return false;
+    } else if (info.st_mode & S_IFDIR) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 bool MWIOUtils::moveFile(const std::string &oldPath, const std::string &newPath)
 {
     string oldAbsolutePath = this->resourcePath(oldPath);

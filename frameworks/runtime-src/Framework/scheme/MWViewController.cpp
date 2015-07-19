@@ -2,6 +2,9 @@
 #include "MWGameScene.h"
 #include "MWGameView.h"
 #include "MWViewSegue.h"
+#if MW_ENABLE_SCRIPT_BINDING
+
+#endif
 #include <new>
 
 using namespace cocos2d;
@@ -49,6 +52,7 @@ void MWViewController::viewDidLoad()
     
 #if MW_ENABLE_SCRIPT_BINDING
     if (_scriptType == kScriptTypeLua) {
+        // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
         // js todo
     }
@@ -59,6 +63,7 @@ void MWViewController::viewDidUnload()
 {
 #if MW_ENABLE_SCRIPT_BINDING
     if (_scriptType == kScriptTypeLua) {
+        // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
         // js todo
     }
@@ -73,6 +78,7 @@ void MWViewController::didReceiveMemoryWarning()
 {
 #if MW_ENABLE_SCRIPT_BINDING
     if (_scriptType == kScriptTypeLua) {
+        // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
         // js todo
     }

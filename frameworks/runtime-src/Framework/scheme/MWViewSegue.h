@@ -49,8 +49,10 @@ public:
     virtual void viewDidSegue(MWViewController *controller) override;
     virtual void viewDidSegueBack(MWViewController *controller) override;
     
-CC_CONSTRUCTOR_ACCESS:
+public:
     bool init();
+    
+    MWViewSegue();
 };
 
 MW_FRAMEWORK_END

@@ -193,9 +193,9 @@ public:
     std::string toLuaString();
     
 protected:
-    MWJsonObject();
-    
     bool init();
+    
+    MWJsonObject();
     
     MWDictionary *_dataHolder;
 };
@@ -389,9 +389,9 @@ public:
     std::string toLuaString();
     
 protected:
-    MWJsonArray();
-    
     bool init();
+    
+    MWJsonArray();
     
     MWArrayList *_dataHolder;
 };

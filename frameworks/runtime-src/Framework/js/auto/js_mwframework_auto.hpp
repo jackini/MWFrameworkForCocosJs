@@ -116,6 +116,7 @@ bool js_mwframework_MWSystemHelper_constructor(JSContext *cx, uint32_t argc, jsv
 void js_mwframework_MWSystemHelper_finalize(JSContext *cx, JSObject *obj);
 void js_register_mwframework_MWSystemHelper(JSContext *cx, JS::HandleObject global);
 void register_all_mwframework(JSContext* cx, JS::HandleObject obj);
+bool js_mwframework_MWSystemHelper_checkNetStatus(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWSystemHelper_getCurrentUsedMemory(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWSystemHelper_millisecondsNow(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWSystemHelper_copyToPasteBoard(JSContext *cx, uint32_t argc, jsval *vp);
@@ -132,6 +133,7 @@ bool js_mwframework_MWIOUtils_fileExists(JSContext *cx, uint32_t argc, jsval *vp
 bool js_mwframework_MWIOUtils_copyFile(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWIOUtils_writeDataToFile(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWIOUtils_getDataFromFile(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_mwframework_MWIOUtils_splicePath(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWIOUtils_createFile(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWIOUtils_resourcePath(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWIOUtils_removeFile(JSContext *cx, uint32_t argc, jsval *vp);
@@ -202,6 +204,7 @@ bool js_mwframework_MWViewSegue_viewDidSegueBack(JSContext *cx, uint32_t argc, j
 bool js_mwframework_MWViewSegue_init(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewSegue_viewDidSegue(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewSegue_create(JSContext *cx, uint32_t argc, jsval *vp);
+bool js_mwframework_MWViewSegue_MWViewSegue(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_mwframework_MWSqliteDb_class;
 extern JSObject *jsb_mwframework_MWSqliteDb_prototype;

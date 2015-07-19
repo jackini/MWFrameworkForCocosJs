@@ -45,9 +45,9 @@ public:
     bool endTransaction(bool result);
     
 protected:
-    MWSqliteDb();
-    
     bool initWithFile(const std::string &file);
+    
+    MWSqliteDb();
     
     sqlite3 *_db;
     std::string _keyName;

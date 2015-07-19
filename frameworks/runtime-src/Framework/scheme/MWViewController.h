@@ -93,7 +93,7 @@ public:
     virtual void viewDidUnload() override;
     virtual void didReceiveMemoryWarning() override;
     
-CC_CONSTRUCTOR_ACCESS:
+public:
     virtual bool init(MWViewSegue *segue);
     
     MWViewController();

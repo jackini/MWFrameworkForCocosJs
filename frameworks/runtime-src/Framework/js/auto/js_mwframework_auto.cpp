@@ -1636,6 +1636,24 @@ void js_register_mwframework_MWStack(JSContext *cx, JS::HandleObject global) {
 JSClass  *jsb_mwframework_MWSystemHelper_class;
 JSObject *jsb_mwframework_MWSystemHelper_prototype;
 
+bool js_mwframework_MWSystemHelper_checkNetStatus(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    mwframework::MWSystemHelper* cobj = (mwframework::MWSystemHelper *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWSystemHelper_checkNetStatus : Invalid Native Object");
+    if (argc == 0) {
+        int ret = (int)cobj->checkNetStatus();
+        jsval jsret = JSVAL_NULL;
+        jsret = int32_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_mwframework_MWSystemHelper_checkNetStatus : wrong number of arguments: %d, was expecting %d", argc, 0);
+    return false;
+}
 bool js_mwframework_MWSystemHelper_getCurrentUsedMemory(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -1738,6 +1756,7 @@ void js_register_mwframework_MWSystemHelper(JSContext *cx, JS::HandleObject glob
     };
 
     static JSFunctionSpec funcs[] = {
+        JS_FN("checkNetStatus", js_mwframework_MWSystemHelper_checkNetStatus, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getCurrentUsedMemory", js_mwframework_MWSystemHelper_getCurrentUsedMemory, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("millisecondsNow", js_mwframework_MWSystemHelper_millisecondsNow, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("copyToPasteBoard", js_mwframework_MWSystemHelper_copyToPasteBoard, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
@@ -1897,6 +1916,30 @@ bool js_mwframework_MWIOUtils_getDataFromFile(JSContext *cx, uint32_t argc, jsva
     }
 
     JS_ReportError(cx, "js_mwframework_MWIOUtils_getDataFromFile : wrong number of arguments: %d, was expecting %d", argc, 1);
+    return false;
+}
+bool js_mwframework_MWIOUtils_splicePath(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
+    js_proxy_t *proxy = jsb_get_js_proxy(obj);
+    mwframework::MWIOUtils* cobj = (mwframework::MWIOUtils *)(proxy ? proxy->ptr : NULL);
+    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWIOUtils_splicePath : Invalid Native Object");
+    if (argc == 2) {
+        std::string arg0;
+        std::string arg1;
+        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
+        ok &= jsval_to_std_string(cx, args.get(1), &arg1);
+        JSB_PRECONDITION2(ok, cx, false, "js_mwframework_MWIOUtils_splicePath : Error processing arguments");
+        std::string ret = cobj->splicePath(arg0, arg1);
+        jsval jsret = JSVAL_NULL;
+        jsret = std_string_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+
+    JS_ReportError(cx, "js_mwframework_MWIOUtils_splicePath : wrong number of arguments: %d, was expecting %d", argc, 2);
     return false;
 }
 bool js_mwframework_MWIOUtils_createFile(JSContext *cx, uint32_t argc, jsval *vp)
@@ -2061,6 +2104,7 @@ void js_register_mwframework_MWIOUtils(JSContext *cx, JS::HandleObject global) {
         JS_FN("copyFile", js_mwframework_MWIOUtils_copyFile, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("writeDataToFile", js_mwframework_MWIOUtils_writeDataToFile, 3, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getDataFromFile", js_mwframework_MWIOUtils_getDataFromFile, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("splicePath", js_mwframework_MWIOUtils_splicePath, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("createFile", js_mwframework_MWIOUtils_createFile, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("resourcePath", js_mwframework_MWIOUtils_resourcePath, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("removeFile", js_mwframework_MWIOUtils_removeFile, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
@@ -3183,6 +3227,35 @@ bool js_mwframework_MWViewSegue_create(JSContext *cx, uint32_t argc, jsval *vp)
     return false;
 }
 
+bool js_mwframework_MWViewSegue_constructor(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    bool ok = true;
+    mwframework::MWViewSegue* cobj = new (std::nothrow) mwframework::MWViewSegue();
+    cocos2d::Ref *_ccobj = dynamic_cast<cocos2d::Ref *>(cobj);
+    if (_ccobj) {
+        _ccobj->autorelease();
+    }
+    TypeTest<mwframework::MWViewSegue> t;
+    js_type_class_t *typeClass = nullptr;
+    std::string typeName = t.s_name();
+    auto typeMapIter = _js_global_type_map.find(typeName);
+    CCASSERT(typeMapIter != _js_global_type_map.end(), "Can't find the class type!");
+    typeClass = typeMapIter->second;
+    CCASSERT(typeClass, "The value is null.");
+    // JSObject *obj = JS_NewObject(cx, typeClass->jsclass, typeClass->proto, typeClass->parentProto);
+    JS::RootedObject proto(cx, typeClass->proto.get());
+    JS::RootedObject parent(cx, typeClass->parentProto.get());
+    JS::RootedObject obj(cx, JS_NewObject(cx, typeClass->jsclass, proto, parent));
+    args.rval().set(OBJECT_TO_JSVAL(obj));
+    // link the native object with the javascript object
+    js_proxy_t* p = jsb_new_proxy(cobj, obj);
+    AddNamedObjectRoot(cx, &p->obj, "mwframework::MWViewSegue");
+    if (JS_HasProperty(cx, obj, "_ctor", &ok) && ok)
+        ScriptingCore::getInstance()->executeFunctionWithOwner(OBJECT_TO_JSVAL(obj), "_ctor", args);
+    return true;
+}
+
 
 extern JSObject *jsb_mwframework_MWObject_prototype;
 
@@ -3242,7 +3315,7 @@ void js_register_mwframework_MWViewSegue(JSContext *cx, JS::HandleObject global)
         cx, global,
         JS::RootedObject(cx, jsb_mwframework_MWObject_prototype),
         jsb_mwframework_MWViewSegue_class,
-        dummy_constructor<mwframework::MWViewSegue>, 0, // no constructor
+        js_mwframework_MWViewSegue_constructor, 0, // constructor
         properties,
         funcs,
         NULL, // no static properties
