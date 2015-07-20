@@ -2765,54 +2765,6 @@ bool js_mwframework_MWViewController_scene(JSContext *cx, uint32_t argc, jsval *
     JS_ReportError(cx, "js_mwframework_MWViewController_scene : wrong number of arguments: %d, was expecting %d", argc, 0);
     return false;
 }
-bool js_mwframework_MWViewController_viewDidUnload(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    mwframework::MWViewController* cobj = (mwframework::MWViewController *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWViewController_viewDidUnload : Invalid Native Object");
-    if (argc == 0) {
-        cobj->viewDidUnload();
-        args.rval().setUndefined();
-        return true;
-    }
-
-    JS_ReportError(cx, "js_mwframework_MWViewController_viewDidUnload : wrong number of arguments: %d, was expecting %d", argc, 0);
-    return false;
-}
-bool js_mwframework_MWViewController_viewDidLoad(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    mwframework::MWViewController* cobj = (mwframework::MWViewController *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWViewController_viewDidLoad : Invalid Native Object");
-    if (argc == 0) {
-        cobj->viewDidLoad();
-        args.rval().setUndefined();
-        return true;
-    }
-
-    JS_ReportError(cx, "js_mwframework_MWViewController_viewDidLoad : wrong number of arguments: %d, was expecting %d", argc, 0);
-    return false;
-}
-bool js_mwframework_MWViewController_didReceiveMemoryWarning(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    mwframework::MWViewController* cobj = (mwframework::MWViewController *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWViewController_didReceiveMemoryWarning : Invalid Native Object");
-    if (argc == 0) {
-        cobj->didReceiveMemoryWarning();
-        args.rval().setUndefined();
-        return true;
-    }
-
-    JS_ReportError(cx, "js_mwframework_MWViewController_didReceiveMemoryWarning : wrong number of arguments: %d, was expecting %d", argc, 0);
-    return false;
-}
 bool js_mwframework_MWViewController_getIdentifier(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -2976,9 +2928,6 @@ void js_register_mwframework_MWViewController(JSContext *cx, JS::HandleObject gl
         JS_FN("init", js_mwframework_MWViewController_init, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("segue", js_mwframework_MWViewController_segue, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("scene", js_mwframework_MWViewController_scene, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("viewDidUnload", js_mwframework_MWViewController_viewDidUnload, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("viewDidLoad", js_mwframework_MWViewController_viewDidLoad, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("didReceiveMemoryWarning", js_mwframework_MWViewController_didReceiveMemoryWarning, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("getIdentifier", js_mwframework_MWViewController_getIdentifier, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("view", js_mwframework_MWViewController_view, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("ctor", js_mwframework_MWViewController_ctor, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
@@ -3107,60 +3056,6 @@ void js_register_mwframework_MWGameView(JSContext *cx, JS::HandleObject global) 
 JSClass  *jsb_mwframework_MWViewSegue_class;
 JSObject *jsb_mwframework_MWViewSegue_prototype;
 
-bool js_mwframework_MWViewSegue_viewReadyToSegue(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    mwframework::MWViewSegue* cobj = (mwframework::MWViewSegue *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWViewSegue_viewReadyToSegue : Invalid Native Object");
-    if (argc == 1) {
-        mwframework::MWViewController* arg0;
-        do {
-            if (!args.get(0).isObject()) { ok = false; break; }
-            js_proxy_t *jsProxy;
-            JSObject *tmpObj = args.get(0).toObjectOrNull();
-            jsProxy = jsb_get_js_proxy(tmpObj);
-            arg0 = (mwframework::MWViewController*)(jsProxy ? jsProxy->ptr : NULL);
-            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
-        } while (0);
-        JSB_PRECONDITION2(ok, cx, false, "js_mwframework_MWViewSegue_viewReadyToSegue : Error processing arguments");
-        cobj->viewReadyToSegue(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-
-    JS_ReportError(cx, "js_mwframework_MWViewSegue_viewReadyToSegue : wrong number of arguments: %d, was expecting %d", argc, 1);
-    return false;
-}
-bool js_mwframework_MWViewSegue_viewDidSegueBack(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    mwframework::MWViewSegue* cobj = (mwframework::MWViewSegue *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWViewSegue_viewDidSegueBack : Invalid Native Object");
-    if (argc == 1) {
-        mwframework::MWViewController* arg0;
-        do {
-            if (!args.get(0).isObject()) { ok = false; break; }
-            js_proxy_t *jsProxy;
-            JSObject *tmpObj = args.get(0).toObjectOrNull();
-            jsProxy = jsb_get_js_proxy(tmpObj);
-            arg0 = (mwframework::MWViewController*)(jsProxy ? jsProxy->ptr : NULL);
-            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
-        } while (0);
-        JSB_PRECONDITION2(ok, cx, false, "js_mwframework_MWViewSegue_viewDidSegueBack : Error processing arguments");
-        cobj->viewDidSegueBack(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-
-    JS_ReportError(cx, "js_mwframework_MWViewSegue_viewDidSegueBack : wrong number of arguments: %d, was expecting %d", argc, 1);
-    return false;
-}
 bool js_mwframework_MWViewSegue_init(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -3177,33 +3072,6 @@ bool js_mwframework_MWViewSegue_init(JSContext *cx, uint32_t argc, jsval *vp)
     }
 
     JS_ReportError(cx, "js_mwframework_MWViewSegue_init : wrong number of arguments: %d, was expecting %d", argc, 0);
-    return false;
-}
-bool js_mwframework_MWViewSegue_viewDidSegue(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    mwframework::MWViewSegue* cobj = (mwframework::MWViewSegue *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWViewSegue_viewDidSegue : Invalid Native Object");
-    if (argc == 1) {
-        mwframework::MWViewController* arg0;
-        do {
-            if (!args.get(0).isObject()) { ok = false; break; }
-            js_proxy_t *jsProxy;
-            JSObject *tmpObj = args.get(0).toObjectOrNull();
-            jsProxy = jsb_get_js_proxy(tmpObj);
-            arg0 = (mwframework::MWViewController*)(jsProxy ? jsProxy->ptr : NULL);
-            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
-        } while (0);
-        JSB_PRECONDITION2(ok, cx, false, "js_mwframework_MWViewSegue_viewDidSegue : Error processing arguments");
-        cobj->viewDidSegue(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-
-    JS_ReportError(cx, "js_mwframework_MWViewSegue_viewDidSegue : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
 }
 bool js_mwframework_MWViewSegue_create(JSContext *cx, uint32_t argc, jsval *vp)
@@ -3298,10 +3166,7 @@ void js_register_mwframework_MWViewSegue(JSContext *cx, JS::HandleObject global)
     };
 
     static JSFunctionSpec funcs[] = {
-        JS_FN("viewReadyToSegue", js_mwframework_MWViewSegue_viewReadyToSegue, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("viewDidSegueBack", js_mwframework_MWViewSegue_viewDidSegueBack, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("init", js_mwframework_MWViewSegue_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("viewDidSegue", js_mwframework_MWViewSegue_viewDidSegue, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("ctor", js_mwframework_MWViewSegue_ctor, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
@@ -6054,33 +5919,6 @@ void js_register_mwframework_MWUUIDGenerator(JSContext *cx, JS::HandleObject glo
 JSClass  *jsb_mwframework_MWNetHandler_class;
 JSObject *jsb_mwframework_MWNetHandler_prototype;
 
-bool js_mwframework_MWNetHandler_handleFailedMessage(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    mwframework::MWNetHandler* cobj = (mwframework::MWNetHandler *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWNetHandler_handleFailedMessage : Invalid Native Object");
-    if (argc == 1) {
-        mwframework::MWNetResponse* arg0;
-        do {
-            if (!args.get(0).isObject()) { ok = false; break; }
-            js_proxy_t *jsProxy;
-            JSObject *tmpObj = args.get(0).toObjectOrNull();
-            jsProxy = jsb_get_js_proxy(tmpObj);
-            arg0 = (mwframework::MWNetResponse*)(jsProxy ? jsProxy->ptr : NULL);
-            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
-        } while (0);
-        JSB_PRECONDITION2(ok, cx, false, "js_mwframework_MWNetHandler_handleFailedMessage : Error processing arguments");
-        cobj->handleFailedMessage(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-
-    JS_ReportError(cx, "js_mwframework_MWNetHandler_handleFailedMessage : wrong number of arguments: %d, was expecting %d", argc, 1);
-    return false;
-}
 bool js_mwframework_MWNetHandler_create(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -6104,33 +5942,6 @@ bool js_mwframework_MWNetHandler_create(JSContext *cx, uint32_t argc, jsval *vp)
     }
 
     JS_ReportError(cx, "js_mwframework_MWNetHandler_create : wrong number of arguments: %d, was expecting %d", argc, 0);
-    return false;
-}
-bool js_mwframework_MWNetHandler_handleSuccessfulMessage(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    JS::RootedObject obj(cx, args.thisv().toObjectOrNull());
-    js_proxy_t *proxy = jsb_get_js_proxy(obj);
-    mwframework::MWNetHandler* cobj = (mwframework::MWNetHandler *)(proxy ? proxy->ptr : NULL);
-    JSB_PRECONDITION2( cobj, cx, false, "js_mwframework_MWNetHandler_handleSuccessfulMessage : Invalid Native Object");
-    if (argc == 1) {
-        mwframework::MWNetResponse* arg0;
-        do {
-            if (!args.get(0).isObject()) { ok = false; break; }
-            js_proxy_t *jsProxy;
-            JSObject *tmpObj = args.get(0).toObjectOrNull();
-            jsProxy = jsb_get_js_proxy(tmpObj);
-            arg0 = (mwframework::MWNetResponse*)(jsProxy ? jsProxy->ptr : NULL);
-            JSB_PRECONDITION2( arg0, cx, false, "Invalid Native Object");
-        } while (0);
-        JSB_PRECONDITION2(ok, cx, false, "js_mwframework_MWNetHandler_handleSuccessfulMessage : Error processing arguments");
-        cobj->handleSuccessfulMessage(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-
-    JS_ReportError(cx, "js_mwframework_MWNetHandler_handleSuccessfulMessage : wrong number of arguments: %d, was expecting %d", argc, 1);
     return false;
 }
 
@@ -6175,9 +5986,7 @@ void js_register_mwframework_MWNetHandler(JSContext *cx, JS::HandleObject global
     };
 
     static JSFunctionSpec funcs[] = {
-        JS_FN("handleFailedMessage", js_mwframework_MWNetHandler_handleFailedMessage, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("create", js_mwframework_MWNetHandler_create, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("handleSuccessfulMessage", js_mwframework_MWNetHandler_handleSuccessfulMessage, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("ctor", js_mwframework_MWNetHandler_ctor, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };

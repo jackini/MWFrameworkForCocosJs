@@ -6,7 +6,7 @@
 #include "MWGameScene.h"
 #include "MWViewController.h"
 #if MW_ENABLE_SCRIPT_BINDING
-
+#include "../js/MWJsUtils.h"
 #endif
 
 using namespace cocos2d;
@@ -41,7 +41,9 @@ void MWViewSegue::viewReadyToSegue(MWViewController *controller)
     if (_scriptType == kScriptTypeLua) {
         // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
+        jsval args[1];
+        args[0] = MWJsUtils::getInstance()->nativeToJsValue(controller);
+        MWJsUtils::getInstance()->executeOwnerFunction(this, "viewReadyToSegue", 1, args);
     }
 #endif
 }
@@ -57,7 +59,9 @@ void MWViewSegue::viewDidSegue(MWViewController *controller)
     if (_scriptType == kScriptTypeLua) {
         // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
+        jsval args[1];
+        args[0] = MWJsUtils::getInstance()->nativeToJsValue(controller);
+        MWJsUtils::getInstance()->executeOwnerFunction(this, "viewDidSegue", 1, args);
     }
 #endif
 }
@@ -73,7 +77,9 @@ void MWViewSegue::viewDidSegueBack(MWViewController *controller)
     if (_scriptType == kScriptTypeLua) {
         // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
+        jsval args[1];
+        args[0] = MWJsUtils::getInstance()->nativeToJsValue(controller);
+        MWJsUtils::getInstance()->executeOwnerFunction(this, "viewDidSegueBack", 1, args);
     }
 #endif
 }

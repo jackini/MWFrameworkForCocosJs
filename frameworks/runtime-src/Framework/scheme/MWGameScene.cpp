@@ -5,7 +5,7 @@
 #include "MWViewSegue.h"
 #include "ScriptingCore.h"
 #if MW_ENABLE_SCRIPT_BINDING
-
+#include "../js/MWJsUtils.h"
 #endif
 #include "../platform/MWSystemHelper.h"
 #include <new>
@@ -80,28 +80,14 @@ void MWGameScene::onEnter()
     
 #ifndef MW_DISABLE_MEMORY_DETECTION
     // open scheduler to check memory.
-    Director::getInstance()->getScheduler()->schedule(MW_CALLBACK_1(MWGameScene::checkMemory, this), this, 10, CC_REPEAT_FOREVER, 60, false, MEMORY_SCHEDULER_NAME);
-#endif
-    
-#if MW_ENABLE_SCRIPT_BINDING
-    if (_scriptType == kScriptTypeLua) {
-        // lua todo
-    } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
+    if (!Director::getInstance()->getScheduler()->isScheduled(MEMORY_SCHEDULER_NAME, this)) {
+        Director::getInstance()->getScheduler()->schedule(MW_CALLBACK_1(MWGameScene::checkMemory, this), this, 10, CC_REPEAT_FOREVER, 60, false, MEMORY_SCHEDULER_NAME);
     }
-#endif
+    #endif
 }
 
 void MWGameScene::onExit()
 {
-#if MW_ENABLE_SCRIPT_BINDING
-    if (_scriptType == kScriptTypeLua) {
-        // lua todo
-    } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
-    }
-#endif
-    
     // unload all view controllers.
     this->unloadAllViewControllers();
     
@@ -121,7 +107,7 @@ void MWGameScene::onEnterTransitionDidFinish()
     if (_scriptType == kScriptTypeLua) {
         // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
+        MWJsUtils::getInstance()->executeOwnerFunction(this, "onEnterTransitionDidFinish", 0, nullptr);
     }
 #endif
 }
@@ -132,7 +118,7 @@ void MWGameScene::onExitTransitionDidStart()
     if (_scriptType == kScriptTypeLua) {
         // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
+        MWJsUtils::getInstance()->executeOwnerFunction(this, "onExitTransitionDidStart", 0, nullptr);
     }
 #endif
     

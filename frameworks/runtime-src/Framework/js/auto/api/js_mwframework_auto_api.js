@@ -971,30 +971,6 @@ scene : function (
 },
 
 /**
- * @method viewDidUnload
- */
-viewDidUnload : function (
-)
-{
-},
-
-/**
- * @method viewDidLoad
- */
-viewDidLoad : function (
-)
-{
-},
-
-/**
- * @method didReceiveMemoryWarning
- */
-didReceiveMemoryWarning : function (
-)
-{
-},
-
-/**
  * @method getIdentifier
  * @return {String}
  */
@@ -1058,26 +1034,6 @@ create : function (
 mw.MWViewSegue = {
 
 /**
- * @method viewReadyToSegue
- * @param {mw.MWViewController} arg0
- */
-viewReadyToSegue : function (
-mwviewcontroller 
-)
-{
-},
-
-/**
- * @method viewDidSegueBack
- * @param {mw.MWViewController} arg0
- */
-viewDidSegueBack : function (
-mwviewcontroller 
-)
-{
-},
-
-/**
  * @method init
  * @return {bool}
  */
@@ -1085,16 +1041,6 @@ init : function (
 )
 {
     return false;
-},
-
-/**
- * @method viewDidSegue
- * @param {mw.MWViewController} arg0
- */
-viewDidSegue : function (
-mwviewcontroller 
-)
-{
 },
 
 /**
@@ -2093,16 +2039,6 @@ getInstance : function (
 mw.MWNetHandler = {
 
 /**
- * @method handleFailedMessage
- * @param {mw.MWNetResponse} arg0
- */
-handleFailedMessage : function (
-mwnetresponse 
-)
-{
-},
-
-/**
  * @method create
  * @return {mw.MWNetHandler}
  */
@@ -2110,16 +2046,6 @@ create : function (
 )
 {
     return mw.MWNetHandler;
-},
-
-/**
- * @method handleSuccessfulMessage
- * @param {mw.MWNetResponse} arg0
- */
-handleSuccessfulMessage : function (
-mwnetresponse 
-)
-{
 },
 
 };

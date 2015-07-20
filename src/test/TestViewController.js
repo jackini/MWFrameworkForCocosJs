@@ -3,21 +3,19 @@
  */
 
 var TestViewController = mw.ViewController.extend({
-    member: null,
+    _member: null,
     ctor: function(member) {
         this._super();
-        this.member = member;
+        this._member = member;
     },
     viewDidLoad: function() {
-        this._super();
-
-        console.log(this.member);
+        cc.log("TestViewController::viewDidLoad", this._member);
 
         var gif = mw.GifSprite.createWithFile("res/GIF/003.gif");
-        gif.setPosition(cc.Point(cc.winSize.width * 0.5, cc.winSize.height * 0.5));
+        gif.setPosition(cc.p(cc.winSize.width * 0.5, cc.winSize.height * 0.5));
         this.view().addChild(gif);
     },
     viewDidUnload: function() {
-        this._super();
+        cc.log("TestViewController::viewDidUnload");
     },
 });

@@ -13,7 +13,7 @@
     "jsList" : [
         "src/app.js",
         "src/resource.js",
-        "src/framework/baseclasses.js",
+        "src/framework/extends.js",
         "src/test/TestScene.js",
         "src/test/TestViewController.js"
     ]

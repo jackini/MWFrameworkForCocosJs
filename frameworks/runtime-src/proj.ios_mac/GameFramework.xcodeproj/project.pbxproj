@@ -134,6 +134,7 @@
 		F512A23A1B3C87380002531C /* MWHttpGetService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A2331B3C87380002531C /* MWHttpGetService.cpp */; };
 		F512A23B1B3C87380002531C /* MWHttpPostService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A2351B3C87380002531C /* MWHttpPostService.cpp */; };
 		F512A2EC1B3C87AD0002531C /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F512A2EB1B3C87AD0002531C /* libcurl.a */; };
+		F51F9BCB1B5CC03B00CDE1CC /* MWJsUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F51F9BC91B5CC03B00CDE1CC /* MWJsUtils.cpp */; };
 		F577F5231B5BC8B400399534 /* MWIOUtilsStrategyIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F577F51E1B5BC8B400399534 /* MWIOUtilsStrategyIOS.mm */; };
 		F577F5241B5BC8B400399534 /* MWSystemHelperStrategyIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F577F5201B5BC8B400399534 /* MWSystemHelperStrategyIOS.mm */; };
 		F577F5251B5BC8B400399534 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F577F5221B5BC8B400399534 /* Reachability.m */; };
@@ -420,6 +421,8 @@
 		F512A2531B3C877C0002531C /* stdcheaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdcheaders.h; sourceTree = "<group>"; };
 		F512A2541B3C877C0002531C /* typecheck-gcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "typecheck-gcc.h"; sourceTree = "<group>"; };
 		F512A2EB1B3C87AD0002531C /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../Framework/net/http/curl/prebuilt/ios/libcurl.a; sourceTree = "<group>"; };
+		F51F9BC91B5CC03B00CDE1CC /* MWJsUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWJsUtils.cpp; sourceTree = "<group>"; };
+		F51F9BCA1B5CC03B00CDE1CC /* MWJsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWJsUtils.h; sourceTree = "<group>"; };
 		F577F51D1B5BC8B400399534 /* MWIOUtilsStrategyIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWIOUtilsStrategyIOS.h; sourceTree = "<group>"; };
 		F577F51E1B5BC8B400399534 /* MWIOUtilsStrategyIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MWIOUtilsStrategyIOS.mm; sourceTree = "<group>"; };
 		F577F51F1B5BC8B400399534 /* MWSystemHelperStrategyIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSystemHelperStrategyIOS.h; sourceTree = "<group>"; };
@@ -650,28 +653,17 @@
 		F5129FFC1B3C86260002531C /* base */ = {
 			isa = PBXGroup;
 			children = (
+				F51F9BD01B5CCA6000CDE1CC /* protocols */,
+				F51F9BCF1B5CCA5400CDE1CC /* exceptions */,
+				F51F9BCC1B5CC9FF00CDE1CC /* containers */,
 				F5129FFD1B3C86260002531C /* FrameworkErrors.cpp */,
 				F5129FFE1B3C86260002531C /* FrameworkErrors.h */,
 				F5129FFF1B3C86260002531C /* FrameworkMacros.h */,
-				F512A0001B3C86260002531C /* ICloneable.h */,
-				F512A0011B3C86260002531C /* ISerializable.h */,
-				F512A0021B3C86260002531C /* IUncopyable.h */,
-				F512A0031B3C86260002531C /* IUninheritable.h */,
-				F512A0041B3C86260002531C /* MWArrayList.cpp */,
-				F512A0051B3C86260002531C /* MWArrayList.h */,
-				F512A0061B3C86260002531C /* mwbase.h */,
 				F512A0071B3C86260002531C /* MWBinaryData.cpp */,
 				F512A0081B3C86260002531C /* MWBinaryData.h */,
-				F512A0091B3C86260002531C /* MWDictionary.cpp */,
-				F512A00A1B3C86260002531C /* MWDictionary.h */,
-				F512A00B1B3C86260002531C /* MWException.cpp */,
-				F512A00C1B3C86260002531C /* MWException.h */,
 				F512A00D1B3C86260002531C /* MWObject.cpp */,
 				F512A00E1B3C86260002531C /* MWObject.h */,
-				F512A00F1B3C86260002531C /* MWQueue.cpp */,
-				F512A0101B3C86260002531C /* MWQueue.h */,
-				F512A0111B3C86260002531C /* MWStack.cpp */,
-				F512A0121B3C86260002531C /* MWStack.h */,
+				F512A0061B3C86260002531C /* mwbase.h */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -735,6 +727,8 @@
 			isa = PBXGroup;
 			children = (
 				F512A02A1B3C86260002531C /* auto */,
+				F51F9BC91B5CC03B00CDE1CC /* MWJsUtils.cpp */,
+				F51F9BCA1B5CC03B00CDE1CC /* MWJsUtils.h */,
 			);
 			path = js;
 			sourceTree = "<group>";
@@ -1037,6 +1031,41 @@
 			path = curl;
 			sourceTree = "<group>";
 		};
+		F51F9BCC1B5CC9FF00CDE1CC /* containers */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0041B3C86260002531C /* MWArrayList.cpp */,
+				F512A0051B3C86260002531C /* MWArrayList.h */,
+				F512A0091B3C86260002531C /* MWDictionary.cpp */,
+				F512A00A1B3C86260002531C /* MWDictionary.h */,
+				F512A00F1B3C86260002531C /* MWQueue.cpp */,
+				F512A0101B3C86260002531C /* MWQueue.h */,
+				F512A0111B3C86260002531C /* MWStack.cpp */,
+				F512A0121B3C86260002531C /* MWStack.h */,
+			);
+			name = containers;
+			sourceTree = "<group>";
+		};
+		F51F9BCF1B5CCA5400CDE1CC /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				F512A00B1B3C86260002531C /* MWException.cpp */,
+				F512A00C1B3C86260002531C /* MWException.h */,
+			);
+			name = exceptions;
+			sourceTree = "<group>";
+		};
+		F51F9BD01B5CCA6000CDE1CC /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F512A0001B3C86260002531C /* ICloneable.h */,
+				F512A0011B3C86260002531C /* ISerializable.h */,
+				F512A0021B3C86260002531C /* IUncopyable.h */,
+				F512A0031B3C86260002531C /* IUninheritable.h */,
+			);
+			name = protocols;
+			sourceTree = "<group>";
+		};
 		F577F51C1B5BC8B400399534 /* ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -1299,6 +1328,7 @@
 				F512A1BC1B3C86260002531C /* MWJsonElement.cpp in Sources */,
 				F512A23B1B3C87380002531C /* MWHttpPostService.cpp in Sources */,
 				F512A1B51B3C86260002531C /* JSONNode_Mutex.cpp in Sources */,
+				F51F9BCB1B5CC03B00CDE1CC /* MWJsUtils.cpp in Sources */,
 				F512A19F1B3C86260002531C /* MWBinaryData.cpp in Sources */,
 				F577F5311B5BCF3500399534 /* md5.cpp in Sources */,
 				F512A1A21B3C86260002531C /* MWObject.cpp in Sources */,

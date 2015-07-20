@@ -175,9 +175,6 @@ void register_all_mwframework(JSContext* cx, JS::HandleObject obj);
 bool js_mwframework_MWViewController_init(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_segue(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_scene(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_mwframework_MWViewController_viewDidUnload(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_mwframework_MWViewController_viewDidLoad(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_mwframework_MWViewController_didReceiveMemoryWarning(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_getIdentifier(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_view(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewController_create(JSContext *cx, uint32_t argc, jsval *vp);
@@ -199,10 +196,7 @@ bool js_mwframework_MWViewSegue_constructor(JSContext *cx, uint32_t argc, jsval 
 void js_mwframework_MWViewSegue_finalize(JSContext *cx, JSObject *obj);
 void js_register_mwframework_MWViewSegue(JSContext *cx, JS::HandleObject global);
 void register_all_mwframework(JSContext* cx, JS::HandleObject obj);
-bool js_mwframework_MWViewSegue_viewReadyToSegue(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_mwframework_MWViewSegue_viewDidSegueBack(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewSegue_init(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_mwframework_MWViewSegue_viewDidSegue(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewSegue_create(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWViewSegue_MWViewSegue(JSContext *cx, uint32_t argc, jsval *vp);
 
@@ -368,9 +362,7 @@ bool js_mwframework_MWNetHandler_constructor(JSContext *cx, uint32_t argc, jsval
 void js_mwframework_MWNetHandler_finalize(JSContext *cx, JSObject *obj);
 void js_register_mwframework_MWNetHandler(JSContext *cx, JS::HandleObject global);
 void register_all_mwframework(JSContext* cx, JS::HandleObject obj);
-bool js_mwframework_MWNetHandler_handleFailedMessage(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_mwframework_MWNetHandler_create(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_mwframework_MWNetHandler_handleSuccessfulMessage(JSContext *cx, uint32_t argc, jsval *vp);
 
 extern JSClass  *jsb_mwframework_MWNetRequest_class;
 extern JSObject *jsb_mwframework_MWNetRequest_prototype;

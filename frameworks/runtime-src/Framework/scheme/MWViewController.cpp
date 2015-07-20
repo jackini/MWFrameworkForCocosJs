@@ -3,7 +3,7 @@
 #include "MWGameView.h"
 #include "MWViewSegue.h"
 #if MW_ENABLE_SCRIPT_BINDING
-
+#include "../js/MWJsUtils.h"
 #endif
 #include <new>
 
@@ -54,7 +54,7 @@ void MWViewController::viewDidLoad()
     if (_scriptType == kScriptTypeLua) {
         // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
+        MWJsUtils::getInstance()->executeOwnerFunction(this, "viewDidLoad", 0, nullptr);
     }
 #endif
 }
@@ -65,7 +65,7 @@ void MWViewController::viewDidUnload()
     if (_scriptType == kScriptTypeLua) {
         // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
+        MWJsUtils::getInstance()->executeOwnerFunction(this, "viewDidUnload", 0, nullptr);
     }
 #endif
     
@@ -80,7 +80,7 @@ void MWViewController::didReceiveMemoryWarning()
     if (_scriptType == kScriptTypeLua) {
         // lua todo
     } else if (_scriptType == kScriptTypeJavascript) {
-        // js todo
+        MWJsUtils::getInstance()->executeOwnerFunction(this, "didReceiveMemoryWarning", 0, nullptr);
     }
 #endif
 }
