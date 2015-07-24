@@ -9,7 +9,8 @@ var TestScene = mw.GameScene.extend({
     },
     onEnter: function() {
         this._super();
+
         var testVc = new TestViewController(123);
         this.loadViewController(testVc, "TEST_VIEW_CONTROLLER");
     }
-})
+});
