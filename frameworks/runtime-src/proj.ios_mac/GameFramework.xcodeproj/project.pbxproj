@@ -127,6 +127,7 @@
 		F512A23B1B3C87380002531C /* MWHttpPostService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A2351B3C87380002531C /* MWHttpPostService.cpp */; };
 		F512A2EC1B3C87AD0002531C /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F512A2EB1B3C87AD0002531C /* libcurl.a */; };
 		F51F9BCB1B5CC03B00CDE1CC /* MWJsUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F51F9BC91B5CC03B00CDE1CC /* MWJsUtils.cpp */; };
+		F559B8821B6CC9D800C90AC9 /* js_mwframework_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F559B8801B6CC9D800C90AC9 /* js_mwframework_manual.cpp */; };
 		F577F5231B5BC8B400399534 /* MWIOUtilsStrategyIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F577F51E1B5BC8B400399534 /* MWIOUtilsStrategyIOS.mm */; };
 		F577F5241B5BC8B400399534 /* MWSystemHelperStrategyIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F577F5201B5BC8B400399534 /* MWSystemHelperStrategyIOS.mm */; };
 		F577F5251B5BC8B400399534 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F577F5221B5BC8B400399534 /* Reachability.m */; };
@@ -414,6 +415,8 @@
 		F512A2EB1B3C87AD0002531C /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../Framework/net/http/curl/prebuilt/ios/libcurl.a; sourceTree = "<group>"; };
 		F51F9BC91B5CC03B00CDE1CC /* MWJsUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWJsUtils.cpp; sourceTree = "<group>"; };
 		F51F9BCA1B5CC03B00CDE1CC /* MWJsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWJsUtils.h; sourceTree = "<group>"; };
+		F559B8801B6CC9D800C90AC9 /* js_mwframework_manual.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = js_mwframework_manual.cpp; sourceTree = "<group>"; };
+		F559B8811B6CC9D800C90AC9 /* js_mwframework_manual.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = js_mwframework_manual.hpp; sourceTree = "<group>"; };
 		F577F51D1B5BC8B400399534 /* MWIOUtilsStrategyIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWIOUtilsStrategyIOS.h; sourceTree = "<group>"; };
 		F577F51E1B5BC8B400399534 /* MWIOUtilsStrategyIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MWIOUtilsStrategyIOS.mm; sourceTree = "<group>"; };
 		F577F51F1B5BC8B400399534 /* MWSystemHelperStrategyIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSystemHelperStrategyIOS.h; sourceTree = "<group>"; };
@@ -722,6 +725,7 @@
 			isa = PBXGroup;
 			children = (
 				F512A02A1B3C86260002531C /* auto */,
+				F559B87F1B6CC9D800C90AC9 /* manual */,
 				F51F9BC91B5CC03B00CDE1CC /* MWJsUtils.cpp */,
 				F51F9BCA1B5CC03B00CDE1CC /* MWJsUtils.h */,
 			);
@@ -1060,6 +1064,15 @@
 			name = protocols;
 			sourceTree = "<group>";
 		};
+		F559B87F1B6CC9D800C90AC9 /* manual */ = {
+			isa = PBXGroup;
+			children = (
+				F559B8801B6CC9D800C90AC9 /* js_mwframework_manual.cpp */,
+				F559B8811B6CC9D800C90AC9 /* js_mwframework_manual.hpp */,
+			);
+			path = manual;
+			sourceTree = "<group>";
+		};
 		F577F51C1B5BC8B400399534 /* ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -1274,6 +1287,7 @@
 				F577F5231B5BC8B400399534 /* MWIOUtilsStrategyIOS.mm in Sources */,
 				F512A1BF1B3C86260002531C /* MWJsonStructure.cpp in Sources */,
 				F512A2261B3C86270002531C /* gif_hash.c in Sources */,
+				F559B8821B6CC9D800C90AC9 /* js_mwframework_manual.cpp in Sources */,
 				509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */,
 				F512A1AF1B3C86260002531C /* JSONAllocator.cpp in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
