@@ -11,8 +11,8 @@
  */
 function MakeScriptHandler() {
     if (arguments.length < 2) {}
-    var target = arguments.shift();
-    var selector = arguments.shift();
+    var target = Array.prototype.shift.call(arguments);
+    var selector = Array.prototype.shift.call(arguments);
     if (typeof selector != "function") {}
     var args = Array.prototype.slice.call(arguments);
 
@@ -32,21 +32,17 @@ function MakeScriptHandler() {
  */
 function CallFunctionAsync() {
     if (arguments.length < 3) {}
-    var target = arguments.shift();
-    var selector = arguments.shift();
-    var delay = arguments.shift();
+    var target = Array.prototype.shift.call(arguments);
+    var selector = Array.prototype.shift.call(arguments);
+    var delay = Array.prototype.shift.call(arguments);
     if (!target instanceof cc.Node || typeof selector != "function" || typeof delay != "number") {}
     if (delay < 0) {
         delay = 0;
     }
     var args = Array.prototype.slice.call(arguments);
 
-    var scheduleId = 0;
     var scheduleSelector = function() {
         selector.apply(target, args);
-        cc.Director.getInstance().getScheduler().unscheduleScriptEntry(scheduleId);
     }
-    scheduleId = cc.Director.getInstance().getScheduler().scheduleScriptFunc(scheduleSelector, delay, false);
-
-    return scheduleId;
+    cc.director.getScheduler().schedule(scheduleSelector, target, delay, 0, delay, false, mw.UUIDGenerator.getInstance().generateUUID());
 }

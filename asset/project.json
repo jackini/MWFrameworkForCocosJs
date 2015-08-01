@@ -11,10 +11,9 @@
     "modules" : ["cocos2d"],
 
     "jsList" : [
-        "src/app.js",
-        "src/resource.js",
         "src/framework/extends.js",
         "src/framework/basic.js",
+        "src/app.js",
         "src/test/TestScene.js",
         "src/test/TestViewController.js"
     ]

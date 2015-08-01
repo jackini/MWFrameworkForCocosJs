@@ -52,7 +52,15 @@ var TestViewController = mw.ViewController.extend({
         var reachabilityStrMap = [ "No network.", "Wifi", "WWAN" ];
         cc.log("NetStatus: %s", reachabilityStrMap[mw.SystemHelper.getInstance().checkNetStatus()]);
         cc.log("Generate UUID: %s", mw.UUIDGenerator.getInstance().generateUUID());
+
+        CallFunctionAsync(this, this.showSchedulerResult, 1, 123, "abc", [ 3, 2, 1 ]);
+        CallFunctionAsync(this, this.showSchedulerResult, 2, 321, "cba", [ 3, 2, 1 ]);
     },
     viewDidUnload: function() {
     },
+    showSchedulerResult: function() {
+        for (var i = 0; i < arguments.length; ++i) {
+            cc.log(arguments[i]);
+        }
+    }
 });
