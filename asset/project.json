@@ -12,7 +12,10 @@
 
     "jsList" : [
         "src/framework/extends.js",
+        "src/framework/debug.js",
         "src/framework/basic.js",
+        "src/framework/model.js",
+
         "src/app.js",
         "src/test/TestScene.js",
         "src/test/TestViewController.js"
