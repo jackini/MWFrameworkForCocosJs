@@ -40,9 +40,7 @@ var TestViewController = mw.ViewController.extend({
         mw.logWithTag("test_begin", "Test Sqlite...");
         var db = mw.SqliteDb.openDb("res/icon.jpg");
         var data = db.executeQuery("select * from [pet_info] where id = '493';");
-        for (var k in data[0]) {
-            mw.log(k, data[0][k]);
-        }
+        mw.dump(data);
         mw.logWithTag("test_end");
 
         mw.logWithTag("test_begin", "Test json...");
