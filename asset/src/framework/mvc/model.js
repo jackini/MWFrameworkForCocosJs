@@ -41,7 +41,7 @@
  *
  */
 var ModelBase = cc.Class.extend({
-    ctor: function(id) {
+    ctor: function (id) {
         this._scheme = {
             id: [ "string", null ],
         };
@@ -49,10 +49,10 @@ var ModelBase = cc.Class.extend({
             id: id,
         });
     },
-    getId: function() {
+    getId: function () {
         return this._id;
     },
-    _defineScheme: function(scheme) {
+    _defineScheme: function (scheme) {
         if (this._inited) {
             return;
         }
@@ -70,7 +70,7 @@ var ModelBase = cc.Class.extend({
         }
         this._inited = true;
     },
-    _setProperties: function(props) {
+    _setProperties: function (props) {
         for (var propName in this._scheme) {
             if (props[propName] != undefined) {
                 var propAttr = this._scheme[propName];
