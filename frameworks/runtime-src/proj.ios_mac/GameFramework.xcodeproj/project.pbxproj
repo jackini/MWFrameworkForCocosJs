@@ -125,7 +125,6 @@
 		F512A2391B3C87380002531C /* MWHttpForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A2311B3C87380002531C /* MWHttpForm.cpp */; };
 		F512A23A1B3C87380002531C /* MWHttpGetService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A2331B3C87380002531C /* MWHttpGetService.cpp */; };
 		F512A23B1B3C87380002531C /* MWHttpPostService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F512A2351B3C87380002531C /* MWHttpPostService.cpp */; };
-		F512A2EC1B3C87AD0002531C /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F512A2EB1B3C87AD0002531C /* libcurl.a */; };
 		F51F9BCB1B5CC03B00CDE1CC /* MWJsUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F51F9BC91B5CC03B00CDE1CC /* MWJsUtils.cpp */; };
 		F559B8821B6CC9D800C90AC9 /* js_mwframework_manual.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F559B8801B6CC9D800C90AC9 /* js_mwframework_manual.cpp */; };
 		F577F5231B5BC8B400399534 /* MWIOUtilsStrategyIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F577F51E1B5BC8B400399534 /* MWIOUtilsStrategyIOS.mm */; };
@@ -403,15 +402,6 @@
 		F512A2341B3C87380002531C /* MWHttpGetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHttpGetService.h; sourceTree = "<group>"; };
 		F512A2351B3C87380002531C /* MWHttpPostService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWHttpPostService.cpp; sourceTree = "<group>"; };
 		F512A2361B3C87380002531C /* MWHttpPostService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWHttpPostService.h; sourceTree = "<group>"; };
-		F512A24C1B3C877C0002531C /* curl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curl.h; sourceTree = "<group>"; };
-		F512A24D1B3C877C0002531C /* curlbuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curlbuild.h; sourceTree = "<group>"; };
-		F512A24E1B3C877C0002531C /* curlrules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curlrules.h; sourceTree = "<group>"; };
-		F512A24F1B3C877C0002531C /* curlver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curlver.h; sourceTree = "<group>"; };
-		F512A2501B3C877C0002531C /* easy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easy.h; sourceTree = "<group>"; };
-		F512A2511B3C877C0002531C /* mprintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mprintf.h; sourceTree = "<group>"; };
-		F512A2521B3C877C0002531C /* multi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multi.h; sourceTree = "<group>"; };
-		F512A2531B3C877C0002531C /* stdcheaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdcheaders.h; sourceTree = "<group>"; };
-		F512A2541B3C877C0002531C /* typecheck-gcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "typecheck-gcc.h"; sourceTree = "<group>"; };
 		F512A2EB1B3C87AD0002531C /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../Framework/net/http/curl/prebuilt/ios/libcurl.a; sourceTree = "<group>"; };
 		F51F9BC91B5CC03B00CDE1CC /* MWJsUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWJsUtils.cpp; sourceTree = "<group>"; };
 		F51F9BCA1B5CC03B00CDE1CC /* MWJsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWJsUtils.h; sourceTree = "<group>"; };
@@ -464,7 +454,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F577F5271B5BCB7300399534 /* SystemConfiguration.framework in Frameworks */,
-				F512A2EC1B3C87AD0002531C /* libcurl.a in Frameworks */,
 				BA3A85EC1A724AE900924D24 /* Security.framework in Frameworks */,
 				BA4E718119EB6E3F00932425 /* MediaPlayer.framework in Frameworks */,
 				C037820C18BF77C500FE4F13 /* libjsbindings iOS.a in Frameworks */,
@@ -976,7 +965,6 @@
 		F512A22E1B3C87380002531C /* http */ = {
 			isa = PBXGroup;
 			children = (
-				F512A23C1B3C877C0002531C /* curl */,
 				F512A22F1B3C87380002531C /* MWHttpDownloader.cpp */,
 				F512A2301B3C87380002531C /* MWHttpDownloader.h */,
 				F512A2311B3C87380002531C /* MWHttpForm.cpp */,
@@ -987,46 +975,6 @@
 				F512A2361B3C87380002531C /* MWHttpPostService.h */,
 			);
 			path = http;
-			sourceTree = "<group>";
-		};
-		F512A23C1B3C877C0002531C /* curl */ = {
-			isa = PBXGroup;
-			children = (
-				F512A23D1B3C877C0002531C /* include */,
-			);
-			path = curl;
-			sourceTree = "<group>";
-		};
-		F512A23D1B3C877C0002531C /* include */ = {
-			isa = PBXGroup;
-			children = (
-				F512A24A1B3C877C0002531C /* ios */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		F512A24A1B3C877C0002531C /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				F512A24B1B3C877C0002531C /* curl */,
-			);
-			path = ios;
-			sourceTree = "<group>";
-		};
-		F512A24B1B3C877C0002531C /* curl */ = {
-			isa = PBXGroup;
-			children = (
-				F512A24C1B3C877C0002531C /* curl.h */,
-				F512A24D1B3C877C0002531C /* curlbuild.h */,
-				F512A24E1B3C877C0002531C /* curlrules.h */,
-				F512A24F1B3C877C0002531C /* curlver.h */,
-				F512A2501B3C877C0002531C /* easy.h */,
-				F512A2511B3C877C0002531C /* mprintf.h */,
-				F512A2521B3C877C0002531C /* multi.h */,
-				F512A2531B3C877C0002531C /* stdcheaders.h */,
-				F512A2541B3C877C0002531C /* typecheck-gcc.h */,
-			);
-			path = curl;
 			sourceTree = "<group>";
 		};
 		F51F9BCC1B5CC9FF00CDE1CC /* containers */ = {
@@ -1492,20 +1440,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = (
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/armeabi",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/armeabi-v7a",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/x86",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/ios",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/win32",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/winrt_8.1/arm",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/winrt_8.1/win32",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp8/arm",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp8/win32",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp_8.1/arm",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp_8.1/win32",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/protobuf/protobuf_lib/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../runtime-src/Framework/net/http/curl/prebuilt/ios";
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1532,20 +1467,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = (
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/armeabi",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/armeabi-v7a",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/android/x86",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/ios",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/win32",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/winrt_8.1/arm",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/winrt_8.1/win32",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp8/arm",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp8/win32",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp_8.1/arm",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/net/http/curl/prebuilt/wp_8.1/win32",
-					"/Users/Maple/Documents/Projects/MWFrameworkForCocosJs/frameworks/runtime-src/Framework/protobuf/protobuf_lib/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../runtime-src/Framework/net/http/curl/prebuilt/ios";
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
