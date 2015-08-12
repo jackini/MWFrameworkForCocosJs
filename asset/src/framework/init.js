@@ -2,10 +2,6 @@
  * Created by Maple on 7/20/15.
  */
 
-global = function() {
-    return this;
-};
-
 mw.GameScene.extend = cc.Class.extend;
 mw.ViewController.extend = cc.Class.extend;
 mw.ViewSegue.extend = cc.Class.extend;
@@ -20,7 +16,7 @@ mw.GameScene.prototype._ctor = function() {
 
 mw.ViewController.prototype._ctor = function() {
     if (arguments.length == 1) {
-        mw.ViewController.prototype.init.call(this, arguments[0]);
+        mw.ViewController.prototype.init.apply(this, arguments);
     }
 };
 
