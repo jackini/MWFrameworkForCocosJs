@@ -1108,6 +1108,12 @@ class Generator(object):
         tmp = open(implfilepath, "w")
         tmp.write(alltext)
         tmp.close()
+        tmp = open(docfilepath)
+        alltext = tmp.read().replace('mw.MW', 'mw.')
+        tmp.close()
+        tmp = open(docfilepath, "w")
+        tmp.write(alltext)
+        tmp.close()
 
     def _pretty_print(self, diagnostics):
         print("====\nErrors in parsing headers:")

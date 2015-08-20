@@ -23,15 +23,11 @@ xcuserdata/
 xcuserdatad/
 *.xcclassmodel/
 DerivedData/
-/tools/AssetManager/dist/
-
-#Eclipse
-.settings/
-bin/
-gen/
-obj/
-local.properties
-libs/
-
-#Webstorm
+# webstorm
 .idea/
+# ccs
+*.udf
+# netbeans
+/tools/PokemonDBSpider/nbproject/private/
+/tools/PokemonDBSpider/build/
+/tools/PokemonDBSpider/dist/
