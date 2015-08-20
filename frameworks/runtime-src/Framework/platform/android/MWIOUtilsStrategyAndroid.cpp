@@ -16,7 +16,8 @@ MW_FRAMEWORK_BEGIN
 
 string MWIOUtilsStrategyAndroid::resourcePath(const std::string &path)
 {
-    return path;
+    // no way to retrieve absolute path while the assets is a zip file.
+    return FileUtils::getInstance()->fullPathForFilename(path);
 }
 
 bool MWIOUtilsStrategyAndroid::fileExists(const std::string &path)
