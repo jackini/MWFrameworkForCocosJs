@@ -132,12 +132,14 @@
 		F577F5251B5BC8B400399534 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F577F5221B5BC8B400399534 /* Reachability.m */; };
 		F577F5271B5BCB7300399534 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F577F5261B5BCB7300399534 /* SystemConfiguration.framework */; };
 		F577F52A1B5BCC1F00399534 /* MWAssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F577F5281B5BCC1F00399534 /* MWAssetManager.cpp */; };
-		F577F5311B5BCF3500399534 /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F577F52D1B5BCF3500399534 /* md5.cpp */; };
-		F577F5321B5BCF3500399534 /* MWCipherMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F577F52F1B5BCF3500399534 /* MWCipherMachine.cpp */; };
 		F57A279C1B6280290055F9F0 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = F57A27981B6280290055F9F0 /* main.js */; };
 		F57A279D1B6280290055F9F0 /* project.json in Resources */ = {isa = PBXBuildFile; fileRef = F57A27991B6280290055F9F0 /* project.json */; };
 		F57A279E1B6280290055F9F0 /* res in Resources */ = {isa = PBXBuildFile; fileRef = F57A279A1B6280290055F9F0 /* res */; };
 		F57A279F1B6280290055F9F0 /* src in Resources */ = {isa = PBXBuildFile; fileRef = F57A279B1B6280290055F9F0 /* src */; };
+		F58A04BC1B864BF400BB5229 /* libbase64.c in Sources */ = {isa = PBXBuildFile; fileRef = F58A04B41B864BF400BB5229 /* libbase64.c */; };
+		F58A04BD1B864BF400BB5229 /* md5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F58A04B71B864BF400BB5229 /* md5.cpp */; };
+		F58A04BE1B864BF400BB5229 /* MWCrypto-ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = F58A04B91B864BF400BB5229 /* MWCrypto-ios.mm */; };
+		F58A04BF1B864BF400BB5229 /* MWCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F58A04BA1B864BF400BB5229 /* MWCrypto.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -416,14 +418,17 @@
 		F577F5261B5BCB7300399534 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		F577F5281B5BCC1F00399534 /* MWAssetManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWAssetManager.cpp; sourceTree = "<group>"; };
 		F577F5291B5BCC1F00399534 /* MWAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWAssetManager.h; sourceTree = "<group>"; };
-		F577F52D1B5BCF3500399534 /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5.cpp; sourceTree = "<group>"; };
-		F577F52E1B5BCF3500399534 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
-		F577F52F1B5BCF3500399534 /* MWCipherMachine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWCipherMachine.cpp; sourceTree = "<group>"; };
-		F577F5301B5BCF3500399534 /* MWCipherMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCipherMachine.h; sourceTree = "<group>"; };
 		F57A27981B6280290055F9F0 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = main.js; path = ../../../Asset/main.js; sourceTree = "<group>"; };
 		F57A27991B6280290055F9F0 /* project.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = project.json; path = ../../../Asset/project.json; sourceTree = "<group>"; };
 		F57A279A1B6280290055F9F0 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../Asset/res; sourceTree = "<group>"; };
 		F57A279B1B6280290055F9F0 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../Asset/src; sourceTree = "<group>"; };
+		F58A04B41B864BF400BB5229 /* libbase64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libbase64.c; sourceTree = "<group>"; };
+		F58A04B51B864BF400BB5229 /* libbase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libbase64.h; sourceTree = "<group>"; };
+		F58A04B71B864BF400BB5229 /* md5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = md5.cpp; sourceTree = "<group>"; };
+		F58A04B81B864BF400BB5229 /* md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = md5.h; sourceTree = "<group>"; };
+		F58A04B91B864BF400BB5229 /* MWCrypto-ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "MWCrypto-ios.mm"; sourceTree = "<group>"; };
+		F58A04BA1B864BF400BB5229 /* MWCrypto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MWCrypto.cpp; sourceTree = "<group>"; };
+		F58A04BB1B864BF400BB5229 /* MWCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCrypto.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -623,12 +628,12 @@
 				F5129FFC1B3C86260002531C /* base */,
 				F512A0131B3C86260002531C /* compression */,
 				F512A0201B3C86260002531C /* db */,
+				F58A04B21B864BF400BB5229 /* encryption */,
 				F512A0291B3C86260002531C /* js */,
 				F512A02F1B3C86260002531C /* json */,
 				F512A08C1B3C86260002531C /* mwframework.h */,
 				F512A08D1B3C86260002531C /* net */,
 				F512A1271B3C86260002531C /* platform */,
-				F577F52B1B5BCF3500399534 /* encryption */,
 				F512A1781B3C86260002531C /* scheme */,
 				F512A1811B3C86260002531C /* texture */,
 				F512A19A1B3C86260002531C /* utils */,
@@ -1034,24 +1039,34 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
-		F577F52B1B5BCF3500399534 /* encryption */ = {
+		F58A04B21B864BF400BB5229 /* encryption */ = {
 			isa = PBXGroup;
 			children = (
-				F577F52C1B5BCF3500399534 /* libmd5 */,
-				F577F52F1B5BCF3500399534 /* MWCipherMachine.cpp */,
-				F577F5301B5BCF3500399534 /* MWCipherMachine.h */,
+				F58A04B31B864BF400BB5229 /* base64 */,
+				F58A04B61B864BF400BB5229 /* md5 */,
+				F58A04B91B864BF400BB5229 /* MWCrypto-ios.mm */,
+				F58A04BA1B864BF400BB5229 /* MWCrypto.cpp */,
+				F58A04BB1B864BF400BB5229 /* MWCrypto.h */,
 			);
-			name = encryption;
-			path = "../../../../MWFrameworkForCocosLua/frameworks/runtime-src/Framework/encryption";
+			path = encryption;
 			sourceTree = "<group>";
 		};
-		F577F52C1B5BCF3500399534 /* libmd5 */ = {
+		F58A04B31B864BF400BB5229 /* base64 */ = {
 			isa = PBXGroup;
 			children = (
-				F577F52D1B5BCF3500399534 /* md5.cpp */,
-				F577F52E1B5BCF3500399534 /* md5.h */,
+				F58A04B41B864BF400BB5229 /* libbase64.c */,
+				F58A04B51B864BF400BB5229 /* libbase64.h */,
 			);
-			path = libmd5;
+			path = base64;
+			sourceTree = "<group>";
+		};
+		F58A04B61B864BF400BB5229 /* md5 */ = {
+			isa = PBXGroup;
+			children = (
+				F58A04B71B864BF400BB5229 /* md5.cpp */,
+				F58A04B81B864BF400BB5229 /* md5.h */,
+			);
+			path = md5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1222,11 +1237,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58A04BC1B864BF400BB5229 /* libbase64.c in Sources */,
 				F512A19D1B3C86260002531C /* FrameworkErrors.cpp in Sources */,
 				F512A2241B3C86270002531C /* gif_err.c in Sources */,
 				F512A1B21B3C86260002531C /* JSONIterators.cpp in Sources */,
 				F512A2101B3C86270002531C /* MWNetCenter.cpp in Sources */,
 				F512A1B41B3C86260002531C /* JSONNode.cpp in Sources */,
+				F58A04BF1B864BF400BB5229 /* MWCrypto.cpp in Sources */,
 				F512A2131B3C86270002531C /* MWNetProtocol.cpp in Sources */,
 				F512A1B01B3C86260002531C /* JSONChildren.cpp in Sources */,
 				F512A1AB1B3C86260002531C /* MWSqliteDb.cpp in Sources */,
@@ -1261,6 +1278,7 @@
 				F512A1A81B3C86260002531C /* zip.c in Sources */,
 				F512A1B91B3C86260002531C /* JSONWorker.cpp in Sources */,
 				F512A19E1B3C86260002531C /* MWArrayList.cpp in Sources */,
+				F58A04BE1B864BF400BB5229 /* MWCrypto-ios.mm in Sources */,
 				F512A2211B3C86270002531C /* MWViewSegue.cpp in Sources */,
 				F512A22D1B3C86270002531C /* MWUUIDGenerator.cpp in Sources */,
 				F512A2221B3C86270002531C /* dgif_lib.c in Sources */,
@@ -1271,18 +1289,17 @@
 				F512A21E1B3C86270002531C /* MWGameScene.cpp in Sources */,
 				F512A2291B3C86270002531C /* MWGifFrame.cpp in Sources */,
 				F512A2231B3C86270002531C /* egif_lib.c in Sources */,
-				F577F5321B5BCF3500399534 /* MWCipherMachine.cpp in Sources */,
 				F512A21F1B3C86270002531C /* MWGameView.cpp in Sources */,
 				F512A2201B3C86270002531C /* MWViewController.cpp in Sources */,
 				F512A1A91B3C86260002531C /* MWZipData.cpp in Sources */,
 				F512A2191B3C86270002531C /* MWSystemHelper.cpp in Sources */,
+				F58A04BD1B864BF400BB5229 /* md5.cpp in Sources */,
 				F512A22A1B3C86270002531C /* MWGifFramesCache.cpp in Sources */,
 				F512A1BC1B3C86260002531C /* MWJsonElement.cpp in Sources */,
 				F512A23B1B3C87380002531C /* MWHttpPostService.cpp in Sources */,
 				F512A1B51B3C86260002531C /* JSONNode_Mutex.cpp in Sources */,
 				F51F9BCB1B5CC03B00CDE1CC /* MWJsUtils.cpp in Sources */,
 				F512A19F1B3C86260002531C /* MWBinaryData.cpp in Sources */,
-				F577F5311B5BCF3500399534 /* md5.cpp in Sources */,
 				F512A1A21B3C86260002531C /* MWObject.cpp in Sources */,
 				F512A1A41B3C86260002531C /* MWStack.cpp in Sources */,
 				F512A1AE1B3C86260002531C /* internalJSONNode.cpp in Sources */,
