@@ -11,6 +11,7 @@
  * didLoadTexture: 是否加载了某个纹理
  * loadTextureAsync: 异步加载纹理
  * forceUnloadTexture: 强制卸载纹理
+ * setPvrTexturesSupportPremultipliedAlpha: 设置PVR纹理是否支持alpha预乘
  * @type {{loadTexture: Function, unloadTexture: Function, _textureMap: Object}}
  */
 var TextureManager = {
@@ -28,7 +29,7 @@ var TextureManager = {
                 texture: texture,   // 纹理key
             };
         }
-        cc.log("Texture %s loaded, reference count: %d", plist, this._textureMap[plist]);
+        cc.log("Texture %s loaded, reference count: %d", plist, this._textureMap[plist]["ref"]);
     },
     unloadTexture: function (plist) {
         if (typeof plist != "string") {
@@ -40,7 +41,7 @@ var TextureManager = {
             return;
         }
         --this._textureMap[plist]["ref"];
-        cc.log("Texture %s unloaded, reference count: %d", plist, this._textureMap[plist]);
+        cc.log("Texture %s unloaded, reference count: %d", plist, this._textureMap[plist]["ref"]);
         if (this._textureMap[plist]["ref"] <= 0) {
             cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile(plist);
             cc.director.getTextureCache().removeTextureForKey(this._textureMap[plist]["texture"]);
@@ -66,6 +67,7 @@ var TextureManager = {
                     ref: 1,
                     texture: texture,
                 };
+                cc.log("Texture %s loaded, reference count: %d", plist, this._textureMap[plist]["ref"]);
                 callback.call();
             };
             cc.director.getTextureCache().addImageAsync(texture, realCallback);
@@ -83,6 +85,9 @@ var TextureManager = {
         cc.SpriteFrameCache.getInstance().removeSpriteFramesFromFile(plist);
         cc.director.getTextureCache().removeTextureForKey(this._textureMap[plist]["texture"]);
         this._textureMap[plist] = undefined;
+    },
+    setPvrTexturesSupportPremultipliedAlpha: function (bSupport) {
+        cc.Image.setPVRImagesHavePremultipliedAlpha(bSupport);
     },
     _textureMap: new Object(),
 };
