@@ -42,10 +42,10 @@ var TestViewController = mw.ViewController.extend({
     },
     viewDidLoad: function() {
         mw.logWithTag("test_begin", "Test ZipData and GifSprite...");
-        var zipData = mw.ZipData.createWithExistingFile("res/GIF/pokemon_gif5.rc");
+        var zipData = mw.ZipData.createWithExistingFile("res/GIF/pokemon_gif5.rc", "7ujm,lp-");
         zipData.beginUnzip();
-        var data1 = zipData.getCompressedFileData("487_o.gif", "7ujm,lp-");
-        var data2 = zipData.getCompressedFileData("493.gif", "7ujm,lp-");
+        var data1 = zipData.getCompressedFileData("487_o.gif");
+        var data2 = zipData.getCompressedFileData("493.gif");
         zipData.endUnzip();
         var gif1 = mw.GifSprite.createWithRawData(data1);
         var gif2 = mw.GifSprite.createWithRawData(data2);
