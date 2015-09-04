@@ -188,19 +188,6 @@ var FiniteStateMachine = Component.extend({
             }
         }
     },
-    exportMethods: function () {
-        return this._super([
-            "setupState",
-            "isReady",
-            "getState",
-            "isState",
-            "canDoEvent",
-            "cannotDoEvent",
-            "isTerminalState",
-            "doEventForce",
-            "doEvent",
-        ]);
-    },
     onBind: function (target) {
     },
     onUnbind: function () {
