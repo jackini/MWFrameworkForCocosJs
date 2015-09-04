@@ -189,7 +189,7 @@ var FiniteStateMachine = Component.extend({
         }
     },
     exportMethods: function () {
-        this._super([
+        return this._super([
             "setupState",
             "isReady",
             "getState",
@@ -200,7 +200,6 @@ var FiniteStateMachine = Component.extend({
             "doEventForce",
             "doEvent",
         ]);
-        return this._target;
     },
     onBind: function (target) {
     },

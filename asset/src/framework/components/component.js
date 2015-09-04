@@ -8,7 +8,8 @@
  * 先通过MakeBindable函数使对象获得绑定组件的能力 再通过addComponent和removeComponent来控制绑定的组件
  * e.g.
  * var target = new cc.Node();
- * MakeBindable(target).addComponent(
+ * MakeBindable(target).addComponent(COMPONENT_NAME).exportMethods();
+ * target.COMPONENT_METHOD();
  * @type {Function}
  */
 var Component = cc.Class.extend({

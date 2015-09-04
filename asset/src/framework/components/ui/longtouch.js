@@ -37,11 +37,10 @@ var LongTouchComponent = Component.extend({
         this._delegate = delegate;
     },
     exportMethods: function () {
-        this._super([
+        return this._super([
             "setLongTouchDelta",
             "setDelegate",
         ]);
-        return this._target;
     },
     onBind: function (target) {
         if (!(target instanceof cc.Node)) {
