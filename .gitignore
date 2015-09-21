@@ -23,10 +23,14 @@ xcuserdata/
 xcuserdatad/
 *.xcclassmodel/
 DerivedData/
+.metadata/
+
 # webstorm
 .idea/
+
 # ccs
 *.udf
+
 # netbeans
 /tools/PokemonDBSpider/nbproject/private/
 /tools/PokemonDBSpider/build/
