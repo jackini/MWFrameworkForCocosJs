@@ -31,3 +31,13 @@ DerivedData/
 /tools/PokemonDBSpider/nbproject/private/
 /tools/PokemonDBSpider/build/
 /tools/PokemonDBSpider/dist/
+
+#Eclipse
+.settings/
+bin/
+gen/
+obj/
+simulator/
+local.properties
+libs/
+assets/

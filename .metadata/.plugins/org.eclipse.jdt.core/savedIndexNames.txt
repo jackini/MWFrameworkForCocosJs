@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+E:\Projects\MWFrameworkForCocosJs\.metadata\.plugins\org.eclipse.jdt.core
+4199315708.index
+4039064728.index
+1386355321.index
+3494839883.index

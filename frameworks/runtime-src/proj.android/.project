@@ -44,7 +44,7 @@
 		<link>
 			<name>jsjavabridge</name>
 			<type>2</type>
-			<location>PARENT-2-PROJECT_LOC/js-bindings/bindings/manual/platform/android/java/src</location>
+			<locationURI>PARENT-2-PROJECT_LOC/js-bindings/bindings/manual/platform/android/java/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
