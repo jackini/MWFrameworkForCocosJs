@@ -99,26 +99,8 @@ var TestViewController = mw.ViewController.extend({
         mw.log("NetStatus: %s", reachabilityStrMap[mw.SystemHelper.getInstance().checkNetStatus()]);
         mw.log("Generate UUID: %s", mw.UUIDGenerator.getInstance().generateUUID());
         mw.logWithTag("test_end");
-
-        mw.logWithTag("test_begin", "Test model...");
-        var p = new Person("WANXIN", "Winder", 24);
-        p.showInfo();
-        p.grow();
-        p.grow();
-        p.changeName("HongYe");
-        p.showInfo();
-        p.changeName(123);
-        p.showInfo();
-        mw.logWithTag("test_end");
-
-        CallFunctionAsync(this, this.showSchedulerResult, 1, 123, "abc", [ 3, 2, 1 ]);
-        CallFunctionAsync(this, this.showSchedulerResult, 2, 321, "cba", [ 3, 2, 1 ]);
     },
     viewDidUnload: function() {
     },
-    showSchedulerResult: function() {
-        for (var i = 0; i < arguments.length; ++i) {
-            mw.log(arguments[i]);
-        }
-    },
+    _target: null,
 });
