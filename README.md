@@ -12,7 +12,8 @@ This is a cross-platform game framework for cocos2d-x 3.x jsb.
 - Some common crypto methods.
 - JSON format.
 - GIF texture.
-- Network scheme (HTTP).
+- Network scheme.
+- Http service.
 
 ## TODO
 
