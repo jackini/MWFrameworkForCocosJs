@@ -1,3 +1,22 @@
-# MWFramework
+# MWFramework (JAVASCRIPT)
 
-Game framework for cocos2d-x 3.x with js.
+## Introduction
+
+This is a cross-platform game framework for cocos2d-x 3.x jsb.
+
+## Support
+
+- MVC scheme.
+- ZIP compression and encryption.
+- Sqlite3 database.
+- Some common crypto methods.
+- JSON format.
+- GIF texture.
+- Network scheme.
+- Http service.
+
+## TODO
+
+- Socket service.
+- Shader effects.
+- Texture optimizations.
