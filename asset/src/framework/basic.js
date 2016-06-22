@@ -10,10 +10,16 @@
  * @returns {Function}
  */
 function MakeScriptHandler() {
-    if (arguments.length < 2) {}
+    if (arguments.length < 2) {
+        mw.error("Wrong parameters count of MakeScriptHandler");
+        return null;
+    }
     var target = Array.prototype.shift.call(arguments);
     var selector = Array.prototype.shift.call(arguments);
-    if (typeof selector != "function") {}
+    if (typeof selector != "function") {
+        mw.error("Invalid parameters of MakeScriptHandler");
+        return null;
+    }
     var args = Array.prototype.slice.call(arguments);
 
     return function() {
@@ -30,11 +36,15 @@ function MakeScriptHandler() {
  * @param ... 自定义参数
  */
 function CallFunctionAsync() {
-    if (arguments.length < 3) {}
+    if (arguments.length < 3) {
+        mw.error("Wrong parameters count of CallFunctionAsync");
+        return;
+    }
     var target = Array.prototype.shift.call(arguments);
     var selector = Array.prototype.shift.call(arguments);
     var delay = Array.prototype.shift.call(arguments);
-    if (!(target instanceof cc.Node) || typeof selector != "function" || typeof delay != "number") {
+    if (typeof selector != "function" || typeof delay != "number") {
+        mw.error("Invalid parameters of CallFunctionAsync");
         return;
     }
     if (delay < 0) {
@@ -73,18 +83,18 @@ function MakeBindable(target) {
     target.addComponent = function (name) {
         var component = Registry.newObject(name);
         this._components[name] = component;
-        component._bind(target);
+        component._bind(this);
         return component;
-    };
+    }.bind(target);
     target.removeComponent = function (name) {
         var component = this._components[name];
         if (component) {
             component._unbind();
         }
         this._components[name] = undefined;
-    };
+    }.bind(target);
     target.getComponent = function (name) {
         return this._components[name];
-    };
+    }.bind(target);
     return target;
 }
